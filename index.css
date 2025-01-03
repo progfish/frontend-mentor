@@ -1,10 +1,12 @@
 @font-face {
     font-family: outfit;
     src: url(/assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+    font-display: swap;
 }
 @font-face {
     font-family: youngSerif;
     src: url(/assets/fonts/young-serif/YoungSerif-Regular.ttf);
+    font-display: swap;
 }
 
 * {
@@ -38,6 +40,8 @@ main {
 img {
     border-radius: 10px;
     margin-bottom: 1.5em;
+    height: 250px;
+    width: 100%;
 }
 
 h1 {
@@ -56,8 +60,10 @@ h1 {
     margin-bottom: 1.5em;
 }
 
-.preparation-container h3 {
+.preparation-container p {
     color: hsl(332, 51%, 32%);
+    font-weight: bold;
+    font-size: large;
     margin-bottom: .75em;
 }
 
