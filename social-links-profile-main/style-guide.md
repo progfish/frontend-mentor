@@ -11,30 +11,23 @@ The designs were created to the following widths:
 
 ## Colors
 
+- Green: hsl(75, 94%, 57%)
+
 - White: hsl(0, 0%, 100%)
 
-- Stone 100: hsl(30, 54%, 90%)
-- Stone 150: hsl(30, 18%, 87%)
-- Stone 600: hsl(30, 10%, 34%)
-- Stone 900: hsl(24, 5%, 18%)
-
-- Brown 800: hsl(14, 45%, 36%)
-
-- Rose 800: hsl(332, 51%, 32%)
-- Rose 50: hsl(330, 100%, 98%)
+- Grey 700: hsl(0, 0%, 20%)
+- Grey 800: hsl(0, 0%, 12%)
+- Grey 900: hsl(0, 0%, 8%)
 
 ## Typography
 
 ### Body Copy
 
-- Font size (paragraph): 16px
+- Font size (paragraph): 14px
 
-### Fonts
+### Font
 
-- Family: [Young Serif](https://fonts.google.com/specimen/Young+Serif)
-- Weights: 400
-
-- Family: [Outfit](https://fonts.google.com/specimen/Outfit)
+- Family: [Inter](https://fonts.google.com/specimen/Inter)
 - Weights: 400, 600, 700
 
-> 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma. The design file for this challenge also includes a design system and tablet layout to help you build a more accurate solution faster.
+> 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma. The design file for this challenge also includes a basic design system to help you build a more accurate solution faster.
