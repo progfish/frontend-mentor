@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Blog preview card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @font-face {
+      font-family: Figtree;
+      src: url(./assets/fonts/Figtree-VariableFont_wght.ttf);
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: Figtree-italic;
+      src: url(./assets/fonts/Figtree-Italic-VariableFont_wght.ttf);
+      font-display: swap;
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-size: 1rem;
+      background-color: hsl(47, 88%, 63%);
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Figtree;
+      padding: 2rem;
+    }
+
+    main {
+      border: 1px solid hsl(0, 0%, 7%);
+      box-shadow: .5rem .5rem 0 hsl(0, 0%, 0%);
+      border-radius: 1rem;
+      height: 33rem;
+      width: 25rem;
+      background-color: hsl(0, 0%, 100%);
+      padding: 1.25rem;
+    }
+
+    .illustration {
+      width: 100%;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .learning {
+      font-weight: 800;
+      display: inline-block;
+      padding: .4rem .8rem;
+      border-radius: .25rem;
+      margin-bottom: 1rem;
+      background-color: hsl(47, 88%, 63%);
+    }
+
+    .published {
+      font-size: .9rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-weight: 800;
+      margin-bottom: 1.1rem;
+      cursor: pointer;
+    }
+
+    h2:hover {
+      color: hsl(47, 88%, 63%);
+    }
+
+    .language-para {
+      color: hsl(0, 0%, 42%);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      line-height: 1.5rem;
+    }
+
+    section.profile {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    section img {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      margin-right: .8rem;
+    }
+
+    section p {
+      font-size: .9rem;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="illustration" src="./assets/images/illustration-article.svg" alt="HTML & CSS Illustration">
+
+    <p class="learning">Learning</p>
+    <p class="published">Published 21 Dec 2023</p>
+    <h2>HTML & CSS foundations</h2>
+    <p class="language-para">These languages are the backbone of every website, defining structure, content, and presentation.</p>
+    <section class="profile">
+      <img src="./assets/images/image-avatar.webp" alt="Avatar Picture">
+      <p>Greg Hooper</p>
+    </section>
+  </main>
+</body>
+</html>
