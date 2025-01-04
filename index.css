@@ -1,0 +1,149 @@
+@font-face {
+    font-family: outfit;
+    src: url(/assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+    font-display: swap;
+}
+@font-face {
+    font-family: youngSerif;
+    src: url(/assets/fonts/young-serif/YoungSerif-Regular.ttf);
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(30, 18%, 87%);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem;
+    font-size: 16px;
+    color: hsl(30, 10%, 34%);
+    font-family: outfit;
+    line-height: 1.5;
+}
+
+main {
+    flex: 1;
+    width: 700px;
+    background-color: hsl(0, 0%, 100%);
+    padding: 2em;
+    border-radius: 20px;
+}
+
+img {
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    height: 250px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: .5em;
+    font-size: 2.5em;
+    font-weight: 500;
+    font-family: youngSerif;
+    color: hsl(24, 5%, 18%);
+    line-height: 1
+}
+
+.preparation-container {
+    background-color: hsl(330, 100%, 98%);
+    border-radius: 10px;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.preparation-container p {
+    color: hsl(332, 51%, 32%);
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: .75em;
+}
+
+ul {
+    list-style-position: outside;
+    padding-inline-start: 1.5em;
+}
+
+li {
+    padding-left: .75em;
+    padding-bottom: .75em;
+    vertical-align: middle;
+}
+
+li:last-child {
+    padding-bottom: 0;
+}
+
+
+li::marker {
+    color: hsl(332, 51%, 32%);
+    font-weight: bold;
+    text-align-last: center;
+    text-align: center;
+}
+
+b {
+    color: hsl(30, 10%, 34%);
+    font-weight: bolder;
+}
+
+.section-title {
+    color: hsl(14, 45%, 36%);
+    font-size: 1.75em;
+    margin-bottom: .75em;
+    font-family: youngSerif;
+    font-weight: 500;
+}
+
+hr {
+    margin: 1.75em 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 1em 0;
+    border-bottom: 1px solid hsl(30, 10%, 34%);
+    width: 50%;
+}
+
+td:first-child {
+    padding-left: 2em;
+}
+
+td:not(:first-child) {
+    padding-left: .5em;
+    color: hsl(332, 51%, 32%);
+    font-weight: bold;
+}
+
+@media screen and (max-width: 756px) {
+    body {
+        padding: 0;
+    }
+
+    main {
+        width: 100%;
+        padding: 0;
+    }
+
+    img {
+        border-radius: 0;
+    }
+
+    .recipe-container {
+        padding: 2em;
+        padding-top: 0;
+    }
+}
