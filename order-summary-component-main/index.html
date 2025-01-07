@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @font-face {
+      font-family: 'Red Hat Display';
+      src: url(./assets/fonts/RedHatDisplay-VariableFont_wght.ttf);
+      font-display: swap;
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      min-height: 0;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      background-color: hsl(225, 100%, 94%);
+      padding: 5rem 2rem;
+      font-family: 'Red Hat Display';
+      font-size: 1rem;
+
+      display: flex;
+      /* flex-direction: column; */
+      align-items: center;
+      justify-content: center;
+
+      background-image: url('./images/pattern-background-mobile.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+
+    main {
+      max-width: 22rem;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 1.5rem;
+      box-shadow: 1rem 1rem 1rem hsl(0, 0%, 85%);
+    }
+
+    .hero {
+      width: 100%;
+      height: 12rem;
+      border-radius: inherit;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    section.order-summary {
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    section.order-summary h1 {
+      color: hsl(223, 47%, 23%);
+      font-weight: 900;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    section.order-summary > p {
+      color: hsl(224, 23%, 55%);
+      line-height: 1.8;
+      font-size: .9rem;
+      font-weight: 500;
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .audio-plan p:first-child {
+      color: hsl(223, 47%, 23%);
+      font-weight: 900;
+      font-size: .8;
+    }
+
+    .audio-plan p:last-child {
+      color: hsl(224, 23%, 55%);
+      font-weight: 500;
+      font-size: .8;
+    }
+
+    section.order-summary .plan {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background-color: hsl(225, 100%, 98%);
+      padding: 1rem;
+      border-radius: .5rem;
+      text-align: start;
+      margin-bottom: 1.5rem;
+    }
+
+    section.order-summary .plan img {
+      flex: 1;
+    }
+
+    section.order-summary .audio-plan {
+      flex: 2;
+    }
+
+    section.order-summary a {
+      color: hsl(245, 75%, 52%);
+      font-weight: 900;
+      font-size: .8rem;
+    }
+
+    section.order-summary button {
+      width: 100%;
+      height: 3rem;
+      background-color: hsl(245, 75%, 52%);
+      color: hsl(0, 0%, 100%);
+      outline: none;
+      border: none;
+      border-radius: .5rem;
+      font-weight: 700;
+      font-size: .9rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: .1rem;
+      cursor: pointer;
+    }
+
+    section.order-summary button:hover {
+      background-color: hsla(245, 75%, 52%, .6);
+    }
+
+    section.order-summary a:hover {
+      color: hsla(245, 75%, 52%, .6);
+      text-decoration: none;
+    }
+
+    .cancel-order {
+      color: hsl(224, 23%, 55%) !important;
+      font-weight: 900 !important;
+      font-size: 1rem !important;
+      margin-bottom: 0 !important;
+      cursor: pointer;
+    }
+
+    .cancel-order:hover {
+      color: hsl(223, 47%, 23%) !important;
+    }
+
+    @media (min-width: 650px) {
+      body {
+        background-image: url('./images/pattern-background-desktop.svg');
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="hero" src="./images/illustration-hero.svg" alt="Hero Illustration">
+
+    <section class="order-summary">
+      <h1>Order Summary</h1>
+      <p>You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!</p>
+
+      <section class="plan">
+        <img src="./images/icon-music.svg" alt="Music icon">
+        <div class="audio-plan">
+          <p>Annual Plan</p>
+          <p>$59.99/year</p>
+        </div>
+        <a href="#">Change</a>
+      </section>
+      <button>Proceed to Payment</button>
+      <p class="cancel-order">Cancel Order</p>
+    </section>
+  </main>
+</body>
+</html>
