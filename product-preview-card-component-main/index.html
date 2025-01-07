@@ -43,17 +43,13 @@
     }
 
     main {
-      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      max-width: 28rem;
+      max-width: 40rem;
     }
 
     section.img-card {
-      max-height: 15rem;
+      height: 15rem;
       width: 100%;
       flex: 1;
       border-top-left-radius: 1rem;
@@ -61,9 +57,9 @@
     }
 
     section.img-card img {
-      height: 100%;
       width: 100%;
-      border-radius: inherit;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
     }
 
     section.card {
@@ -71,14 +67,6 @@
       border-bottom-right-radius: 1rem;
       padding: 1.5rem;
       background-color: hsl(0, 0%, 100%);
-    }
-
-
-    .desktop-img {
-      display: none;
-    }
-    .mobile-img {
-      display: block;
     }
 
     section.card h1 {
@@ -162,35 +150,23 @@
     @media screen and (min-width: 650px) {
       main {
         flex-direction: row;
-        max-width: 40rem;
         height: 28rem;
       }
       section.img-card {
         max-height: 100%;
         flex: 1 50%;
-
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-        border-top-left-radius: 1rem;
+        border-radius: 1rem 0 0 1rem;
       }
       section.img-card img {
         height: 28rem;
+        border-radius: 1rem 0 0 1rem;
       }
 
       section.card {
         flex: 1 50%;
-        height: 100%;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 1rem;
         border-top-right-radius: 1rem;
-      }
-
-      .desktop-img {
-        display: block;
-      }
-      .mobile-img {
-        display: none;
       }
     }
   </style>
@@ -198,10 +174,10 @@
 <body>
   <main>
     <section class="img-card">
-
-
-      <img class="desktop-img" src="./images/image-product-desktop.jpg" alt="Product Image">
-      <img class="mobile-img" src="./images/image-product-mobile.jpg" alt="Product Image">
+      <picture>
+        <source srcset="./images/image-product-desktop.jpg" media="(min-width: 650px)">
+        <img src="./images/image-product-mobile.jpg" alt="Product Image">
+      </picture>
     </section>
 
     <section class="card">
