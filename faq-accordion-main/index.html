@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @font-face {
+      font-family: WorkSans;
+      src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf');
+      font-display: swap;
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: WorkSans;
+      font-size: 1rem;
+      font-weight: 400;
+      min-height: 100vh;
+      width: 100vw;
+      padding: 8rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      background: hsl(275, 100%, 97%) url('./assets/images/background-pattern-mobile.svg') no-repeat top center fixed;
+      background-size: contain;
+    }
+
+    main {
+      max-width: 32rem;
+      max-height: 80rem;
+      border-radius: .75rem;
+      padding: 1.5rem;
+      background-color: hsl(0, 0%, 100%);
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    header img {
+      width: 1.5rem;
+      margin-right: 1.5rem;
+    }
+    h1 {
+      color: hsl(292, 42%, 14%);
+      font-weight: 700;
+    }
+
+    .acc-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .acc-question *:hover {
+      color:  hsl(292, 16%, 49%);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    h2 {
+      color: hsl(292, 42%, 14%);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .acc-answer {
+      padding-top: 0;
+      overflow: hidden;
+      max-height: 0;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .show {
+      padding-top: 1rem;
+      max-height: 1000px;
+    }
+
+    p {
+      font-size: .87rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: hsl(292, 16%, 49%);
+    }
+
+    hr {
+      margin: 1.5rem 0;
+      border-top: 1px solid hsl(275, 100%, 97%);
+    }
+
+    @media (min-width: 768px) {
+      body {
+        background-image: url('./assets/images/background-pattern-desktop.svg');
+      }
+    }
+
+  </style>
+
+  <script>
+
+    let toggle = false
+    const openAccordion = (index) => {
+      const currentAccordion = document.querySelector(`[accordion-index="${index}"]`)
+      const img = currentAccordion.querySelector('img')
+      const answer = currentAccordion.querySelector('.acc-answer')
+
+      toggle = !toggle
+
+      if (toggle) {
+        img.src = './assets/images/icon-minus.svg'
+        answer.classList.add('show')
+      } else {
+        img.src = './assets/images/icon-plus.svg'
+        answer.classList.remove('show')
+      }
+    }
+  </script>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="./assets/images/icon-star.svg" alt="">
+      <h1>FAQs</h1>
+    </header>
+
+    <section class="accordion" accordion-index="1">
+      <section class="acc-question" onclick="openAccordion(1);" >
+        <h2>What is Frontend Mentor, and how will it help me?</h2>
+        <img src="./assets/images/icon-plus.svg" alt="">
+      </section>
+      <section class="acc-answer">
+        <p>
+          Frontend Mentor offers realistic coding challenges to help developers improve their
+          frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
+          all levels and ideal for portfolio building.
+        </p>
+      </section>
+      <hr>
+    </section>
+
+    <section class="accordion" accordion-index="2">
+      <section class="acc-question" onclick="openAccordion(2);">
+        <h2>Is Frontend Mentor free?</h2>
+        <img src="./assets/images/icon-plus.svg" alt="">
+      </section>
+      <section class="acc-answer">
+        <p>
+          Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+          option providing access to a range of projects suitable for all skill levels.
+        </p>
+      </section>
+      <hr>
+    </section>
+
+    <section class="accordion" accordion-index="3">
+      <section class="acc-question" onclick="openAccordion(3);">
+        <h2>Can I use Frontend Mentor projects in my portfolio?</h2>
+        <img src="./assets/images/icon-plus.svg" alt="">
+      </section>
+      <section class="acc-answer">
+        <p>
+          Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+          way to showcase your skills to potential employers!
+        </p>
+      </section>
+      <hr>
+    </section>
+
+    <section class="accordion" accordion-index="4">
+      <section class="acc-question" onclick="openAccordion(4);">
+        <h2>How can I get help if I'm stuck on a Frontend Mentor challenge?</h2>
+        <img src="./assets/images/icon-plus.svg" alt="">
+      </section>
+      <section class="acc-answer">
+        <p>
+          The best place to get help is inside Frontend Mentor's Discord community. There's a help
+          channel where you can ask questions and seek support from other community members.
+        </p>
+      </section>
+    </section>
+
+  </main>
+  <!-- FAQs
+
+  How can I get help if I'm stuck on a Frontend Mentor challenge?
+
+  The best place to get help is inside Frontend Mentor's Discord community. There's a help
+  channel where you can ask questions and seek support from other community members. -->
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>
