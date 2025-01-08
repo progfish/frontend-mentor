@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Stats preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @font-face {
+      font-family: Inter;
+      src: url('./assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf');
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: LexendDeca;
+      src: url('./assets/fonts/Lexend/LexendDeca-VariableFont_wght.ttf');
+      font-display: swap;
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: Inter;
+      font-size: 1rem;
+      font-weight: 400;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 1rem;
+      background-color: hsl(233, 47%, 7%);
+    }
+
+    main {
+      max-width: 80rem;
+      max-height: 50rem;
+      background-color: hsl(244, 38%, 16%);
+      border-radius: 0 0 1rem 1rem;
+    }
+
+    .image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: hsl(277, 64%, 61%, .5);
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    .image {
+      position: relative;
+      min-height: 15rem;
+      background-image: url('./images/image-header-mobile.jpg');
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    .insights {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .insight-description {
+      margin-bottom: 2rem;
+    }
+
+    .insight-description h1 {
+      color: hsl(0, 0%, 100%);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .insight-description span {
+      color: hsl(277, 64%, 61%);
+    }
+
+    .discover-text {
+      color: hsla(0, 0%, 100%, 0.75);
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+
+    .stats {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .stat p:first-child {
+      color: hsl(0, 0%, 100%);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+
+    .stat p:last-child {
+      color: hsla(0, 0%, 100%, 0.6);
+      font-family: 'LexendDeca';
+      font-size: .9rem;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    @media (min-width: 820px) {
+      main {
+        display: flex;
+        border-radius: 1rem;
+      }
+
+      .image {
+        flex: 1 50%;
+        order: 2;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 1rem;
+        background-image: url('./images/image-header-desktop.jpg');
+      }
+
+      .image::before {
+        border-bottom-right-radius: 1rem;
+      }
+
+      .insights {
+        flex: 1 50%;
+        padding: 4rem 8rem 4rem 4rem;
+        text-align: start;
+      }
+
+      .insight-description {
+        margin-bottom: 4rem;
+      }
+
+      .stats {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="image"></section>
+
+    <section class="insights">
+
+      <section class="insight-description">
+        <h1>
+          Get <span>insights</span> that help your business grow.
+        </h1>
+        <p class="discover-text">
+          Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.
+        </p>
+      </section>
+
+      <section class="stats">
+        <div class="stat">
+          <p>10k+</p>
+          <p>companies</p>
+        </div>
+        <div class="stat">
+          <p>314</p>
+          <p>templates</p>
+        </div>
+        <div class="stat">
+          <p>12m+</p>
+          <p>queries</p>
+        </div>
+      </section>
+
+    </section>
+  </main>
+</body>
+</html>
