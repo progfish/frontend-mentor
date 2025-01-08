@@ -83,6 +83,13 @@
       border-radius: 2rem;
       font-size: 1.1rem;
       background-color: hsl(0, 0%, 95%);
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: inherit;
+      border: 2px solid hsl(0, 0%, 95%);
+      color: hsl(0, 0%, 95%) !important;
     }
 
     .sedan {
@@ -107,6 +114,10 @@
     }
 
     @media (min-width: 775px) {
+      body {
+        height: 100vh;
+      }
+
       main {
         flex-direction: row;
       }
