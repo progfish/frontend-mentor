@@ -30,7 +30,7 @@
       font-size: 1rem;
       font-weight: 400;
       min-height: 100vh;
-      width: 100vw;
+      min-width: 100vw;
       padding: 8rem 1.5rem;
       display: flex;
       justify-content: center;
@@ -70,9 +70,12 @@
       gap: 2rem;
     }
 
-    .acc-question *:hover {
+    .acc-question h2:hover {
       color:  hsl(292, 16%, 49%);
       font-weight: 700;
+    }
+
+    .acc-question:hover {
       cursor: pointer;
     }
 
@@ -107,24 +110,20 @@
     }
 
     @media (min-width: 768px) {
+
       body {
         background-image: url('./assets/images/background-pattern-desktop.svg');
       }
     }
-
   </style>
 
   <script>
-
-    let toggle = false
     const openAccordion = (index) => {
       const currentAccordion = document.querySelector(`[accordion-index="${index}"]`)
       const img = currentAccordion.querySelector('img')
       const answer = currentAccordion.querySelector('.acc-answer')
 
-      toggle = !toggle
-
-      if (toggle) {
+      if (!answer.classList.contains('show')) {
         img.src = './assets/images/icon-minus.svg'
         answer.classList.add('show')
       } else {
@@ -198,17 +197,5 @@
     </section>
 
   </main>
-  <!-- FAQs
-
-  How can I get help if I'm stuck on a Frontend Mentor challenge?
-
-  The best place to get help is inside Frontend Mentor's Discord community. There's a help
-  channel where you can ask questions and seek support from other community members. -->
-
-
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
 </body>
 </html>
