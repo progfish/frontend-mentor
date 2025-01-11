@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Profile card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Kumbh Sans';
+      font-size: 1rem;
+      font-weight: 400;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      padding: 0 1.5rem;
+
+      background-color: hsl(185, 75%, 39%);
+      background-image: url(./images/bg-pattern-top.svg), url(images/bg-pattern-bottom.svg);
+      background-position: right 50vw bottom 45vh, left 50vw top 45vh;
+      background-repeat: no-repeat;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    main {
+      width: 25rem;
+      min-height: 30rem;
+      background-color: hsl(0, 0%, 100%);
+      background-image: url('./images/bg-pattern-card.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 40%;
+      border-radius: 1rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
+    }
+
+    img {
+      height: 8rem;
+      width: 8rem;
+      border-radius: 50%;
+      border: .25rem solid hsl(0, 0%, 100%);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: hsl(229, 23%, 23%);
+      margin-bottom: .75rem;
+    }
+
+    span {
+      color: hsl(227, 10%, 46%);
+      margin-left: .5rem;
+      font-weight: 400;
+    }
+
+    h2 {
+      color: hsl(227, 10%, 46%);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    section {
+      border-top: 1px solid hsl(0, 0%, 59%);
+      width: 100%;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .profile-stats {
+      text-align: center;
+    }
+
+    h3 {
+      color: hsl(229, 23%, 23%);
+      margin-bottom: .5rem;
+    }
+
+    h4 {
+      color: hsl(227, 10%, 46%);
+      font-size: .8rem;
+      letter-spacing: .1rem;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="./images/image-victor.jpg" alt="Profile Picture">
+    <h1>Victor Crest <span>26</span></h1>
+    <h2>London</h2>
+    <section>
+      <div class="profile-stats">
+        <h3>80K</h3>
+        <h4>Followers</h4>
+      </div>
+      <div class="profile-stats">
+        <h3>803K</h3>
+        <h4>Likes</h4>
+      </div>
+      <div class="profile-stats">
+        <h3>1.4K</h3>
+        <h4>Photos</h4>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
