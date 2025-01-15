@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Overpass;
+      font-size: 15px;
+      font-weight: 400;
+
+
+      background-color: hsl(216, 12%, 8%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    main {
+      width: 17rem;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      background-color: hsl(213, 19%, 18%);
+    }
+
+    .get-feedback {
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: hsl(0, 0%, 100%);
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+      font-weight: 700;
+    }
+
+    p {
+      color: hsl(217, 12%, 63%);
+      line-height: 1.5;
+      font-weight: 400;
+      font-size: .85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ratings {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .circle {
+      display: inline-flex;
+      height: 45px;
+      width: 45px;
+      background-color: hsl(200, 10%, 24%);
+      border-radius: 50%;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+      color: hsl(0, 0%, 100%);
+
+    }
+
+    .circle-center {
+      position: absolute;
+    }
+
+    .circle:not(#star):hover {
+      background-color: hsl(25, 97%, 53%);
+      color: hsl(216, 12%, 8%);
+      cursor: pointer;
+    }
+
+    .circle.active {
+      background-color: hsl(0, 0%, 100%);
+      color: hsl(216, 12%, 8%);
+    }
+
+    button {
+      width: 100%;
+      height: 2.5rem;
+      border-radius: 2rem;
+      border: none;
+      outline: none;
+      background-color: hsl(25, 97%, 53%);
+      font-weight: 700;
+      letter-spacing: .1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: hsl(0, 0%, 80%);
+    }
+
+    button:focus {
+      background-color: hsl(0, 0%, 100%);
+    }
+
+    .thank-you {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .thank-you img {
+      width: 6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .thank-you span {
+      padding: .75rem;
+      border-radius: 1.5rem;
+      background-color: hsl(200, 10%, 24%);
+      color: hsl(25, 97%, 53%);
+      margin-bottom: 1rem;
+    }
+
+    .thank-you p {
+      margin: 0;
+      text-align: center;
+      line-height: 1.5rem;
+    }
+
+    .show {
+      display: flex;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="get-feedback">
+      <div class="circle" id="star">
+        <img src="./images/icon-star.svg" alt="Star">
+      </div>
+      <h1>How did we do?</h1>
+      <p> Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      <div class="ratings">
+        <div class="circle" onclick="setFeedback(event, 1)">
+          1
+        </div>
+        <div class="circle" onclick="setFeedback(event, 2)">
+          2
+        </div>
+        <div class="circle" onclick="setFeedback(event, 3)">
+          3
+        </div>
+        <div class="circle" onclick="setFeedback(event, 4)">
+          4
+        </div>
+        <div class="circle" onclick="setFeedback(event, 5)">
+          5
+        </div>
+      </div>
+      <button>SUBMIT</button>
+    </section>
+
+    <section class="thank-you hide">
+      <img src="./images/illustration-thank-you.svg" alt="Thank You">
+      <span id="feedback">You selected {{feedback}} out of 5</span>
+      <h1>Thank you!</h1>
+      <p>We appreciate you taking the time to give a rating. If you ever need more support,
+        don't hesitate to get in touch!</p>
+    </section>
+  </main>
+  <script>
+    const setFeedback = (event, feedback) => {
+      currentFeedback = feedback
+      document.querySelector('.active')?.classList?.remove('active')
+      event.target.classList.add('active')
+    }
+
+    let currentFeedback = 0;
+
+    document.querySelector('button').addEventListener('click', () => {
+      const feedbackSpan = document.getElementById('feedback')
+      feedbackSpan.innerHTML = feedbackSpan.innerHTML.replace('{{feedback}}', currentFeedback)
+
+      document.querySelector('.get-feedback').classList.toggle('hide')
+      document.querySelector('.thank-you').classList.toggle('hide')
+    })
+  </script>
+</body>
+</html>
