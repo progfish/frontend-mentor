@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      font-family: 'Karla';
+    }
+
+    body {
+      /* font-family: 'Karla'; */
+      font-size: 1rem;
+      font-weight: 400;
+
+      max-height: 100vh;
+      min-width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* flex-wrap: wrap; */
+
+      background-color: hsl(204, 43%, 93%);
+      padding: 5rem 2rem;
+    }
+    main {
+
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      max-width: 40rem;
+
+      box-shadow: .5rem .5rem 1rem hsl(0, 0%, 80%);
+    }
+    h1 {
+
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .community h1 {
+      color: hsl(179, 62%, 43%);
+    }
+
+    h2 {
+      color: hsl(71, 73%, 54%);
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .community {
+      padding: 1.75rem 1.5rem;
+      background-color: hsl(0, 0%, 100%);
+    }
+    .community p {
+      color: hsl(218, 22%, 67%);
+      line-height: 1.7;
+      font-size: .85rem;
+    }
+
+    .subscription {
+      padding: 1.75rem 1.5rem;
+      background-color: hsl(179, 62%, 43%);
+    }
+
+    .subscription h1 {
+      color:hsl(0, 0%, 100%);
+    }
+
+    .subscription h2 {
+      font-size: 2rem;
+      margin-right: .75rem;
+      margin-bottom: 0;
+      color:hsl(0, 0%, 100%);
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      margin-bottom: .5rem;
+    }
+    .subscription h3 {
+      /* font-size: 1rem; */
+      color: hsl(204, 43%, 93%);
+      font-weight: 400;
+    }
+    .subscription p {
+      color: hsl(0, 0%, 100%);
+      margin-bottom: 2rem;
+    }
+    .subscription button {
+      outline: none;
+      border: none;
+      width: 100%;
+      height: 3.2rem;
+      border-radius: .25rem;
+      background-color: hsl(71, 73%, 54%);
+      color: hsl(0, 0%, 100%);
+      font-weight: 500;
+      font-size: 1.1rem;
+      letter-spacing: .05rem;
+      /* box-shadow: 0 .5rem 1rem -.5rem rgba(0,0,0, .75); */
+    }
+
+    .why {
+      padding: 1.75rem 1.5rem;
+      background-color: hsla(179, 62%, 43%, .8);
+    }
+
+    .why h1 {
+      color:hsl(0, 0%, 100%);
+    }
+
+    .why ul {
+      list-style-type: none;
+    }
+
+    .why li {
+      color: hsl(204, 43%, 93%);
+      font-size: .85rem;
+      margin-bottom: .25rem;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .community {
+        flex-basis: 100%;
+      }
+      .subscription, .why {
+        flex-basis: 50%;
+      }
+
+      .community, .subscription, .why {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="community">
+      <h1>Join our community</h1>
+      <h2>30-day, hassle-free money back guarantee</h2>
+      <p>Gain access to our full library of tutorials along with expert code reviews.
+        Perfect for any developers who are serious about honing their skills.</p>
+    </section>
+
+    <section class="subscription">
+      <h1>Monthly Subscription</h1>
+      <div class="price">
+        <h2>&dollar;29</h2>
+        <h3>per month</h3>
+      </div>
+      <p>Full access for less than &dollar;1 a day</p>
+      <button>Sign Up</button>
+    </section>
+
+    <section class="why">
+      <h1>Why Us</h1>
+      <ul>
+        <li>Tutorials by industry experts</li>
+        <li>Peer &amp; expert code review</li>
+        <li>Coding exercises</li>
+        <li>Access to our GitHub repos</li>
+        <li>Community forum</li>
+        <li>Flashcard decks</li>
+        <li>New videos every week</li>
+      </ul>
+    </section>
+  </main>
+  <!--
+
+  Why Us
+
+  Tutorials by industry experts
+  Peer &amp; expert code review
+  Coding exercises
+  Access to our GitHub repos
+  Community forum
+  Flashcard decks
+  New videos every week
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+</body>
+</html>
