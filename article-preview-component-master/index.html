@@ -78,7 +78,7 @@
         flex: 1 100%;
 
         padding: 2rem 1.75rem 1rem 1.75rem;
-
+        border-radius: 0 0 .75rem .75rem;
       }
 
       .content h1 {
@@ -93,12 +93,11 @@
         color: hsl(214, 17%, 51%);
         line-height: 1.3rem;
         font-size: .84rem;
+        margin-bottom: 1.5rem;
       }
 
       footer {
         position: relative;
-        border-radius: 0 0 .75rem .75rem;
-        padding: 1rem 1.5rem 1rem 1.5rem;
       }
 
       footer .profile {
@@ -136,8 +135,34 @@
         background-position: center;
       }
 
+      .share {
+        display: none;
+      }
 
+      @media (min-width: 768px) {
+        main {
+          flex-direction: row;
+          width: 39rem;
+          height: 16rem;
+        }
 
+        .hero-img {
+          max-height: 100%;
+          border-radius: .75rem 0 0 .75rem;
+        }
+
+        .hero-img img {
+          min-height: 100%;
+        }
+
+        .content {
+          border-radius: 0 .75rem .75rem 0 ;
+        }
+
+        .content h1 {
+          font-size: 1.3rem;
+        }
+      }
       @keyframes revealShare {
         0% {
           clip-path: inset(0);
@@ -173,29 +198,33 @@
           felt slightly bare and uninviting. I've got some simple tips to help
           you make any room feel complete.
         </p>
-      </section>
-      <footer class="default-bg">
-        <section class="profile">
-          <img class="avatar" src="./images/avatar-michelle.jpg" alt="Avatar" />
-          <div>
-            <h2>Michelle Appleton</h2>
-            <h3>28 Jun 2020</h3>
-          </div>
-          <div class="circle" id="profile-share-icon">
-            <div class="share-icon"></div>
-          </div>
-        </section>
 
-      </footer>
-      <!-- <section class="share">
-        <span>Share</span>
-        <img src="./images/icon-facebook.svg" alt="Facebook">
-        <img src="./images/icon-twitter.svg" alt="Twitter">
-        <img src="./images/icon-pinterest.svg" alt="Pinterest">
-        <div class="circle" id="share-share-icon">
-          <div class="share-icon"></div>
-        </div>
-      </section> -->
+        <footer class="default-bg">
+          <section class="profile">
+            <img class="avatar" src="./images/avatar-michelle.jpg" alt="Avatar" />
+            <div>
+              <h2>Michelle Appleton</h2>
+              <h3>28 Jun 2020</h3>
+            </div>
+            <div class="circle" id="profile-share-icon">
+              <div class="share-icon"></div>
+            </div>
+          </section>
+
+          <section class="share">
+            <span>Share</span>
+            <img src="./images/icon-facebook.svg" alt="Facebook">
+            <img src="./images/icon-twitter.svg" alt="Twitter">
+            <img src="./images/icon-pinterest.svg" alt="Pinterest">
+            <div class="circle" id="share-share-icon">
+              <div class="share-icon"></div>
+            </div>
+          </section>
+
+        </footer>
+      </section>
+
+
     </main>
 
     <!-- <script>
