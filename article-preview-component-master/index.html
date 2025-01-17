@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Article preview component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Manrope";
+        font-size: 13px;
+        font-weight: 500;
+        background-color: hsla(212, 23%, 69%, 0.5);
+
+        max-width: 100vw;
+        min-height: 100vh;
+        padding: 0 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .default-bg {
+        background-color: hsl(210, 46%, 95%);
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+
+        width: 20rem;
+        box-shadow: .5rem .5rem 1rem hsl(0, 0%, 80%);
+      }
+
+      .hero-img {
+        height: 13rem;
+        border-radius: .75rem .75rem 0 0;
+        background-image: url('./images/drawers.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 15.5rem;
+      }
+
+      .hero-img img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      .side-padding {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex: 1 100%;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        z-index: 5;
+      }
+
+      .content h1 {
+        color: hsl(217, 19%, 35%);
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .content p {
+        color: hsl(214, 17%, 51%);
+        line-height: 1.3rem;
+        font-size: .84rem;
+      }
+
+      footer {
+        position: relative;
+      }
+
+      footer .profile {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-top: 1rem;
+        padding-bottom: 1.25rem;
+        position: absolute;
+        width: 100%;
+        border-radius: 0 0 .75rem .75rem;
+        height: 76px;
+      }
+
+      footer .profile img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin-right: 1.2rem;
+      }
+
+      footer .profile h2 {
+        color: hsl(217, 19%, 35%);
+        font-weight: 700;
+        font-size: .8rem;
+      }
+
+      footer .profile h3 {
+        color: hsl(214, 17%, 51%);
+        font-weight: 500;
+        font-size: .8rem;
+      }
+
+      footer .profile .circle {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin-left: auto;
+      }
+
+      footer .share {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background-color: hsl(217, 19%, 35%);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 0 0 .75rem .75rem;
+        position: absolute;
+        width: 100%;
+      }
+
+      footer .share span {
+        color: hsl(214, 17%, 51%);
+        font-size: .9rem;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+        font-weight: 700;
+      }
+
+      footer  .circle {
+        margin-left: auto;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+
+      }
+
+      .profile-circle-bg {
+        background-color: hsla(212, 23%, 69%, 0.3);
+      }
+      .profile-circle-icon-color {
+        background-color: hsl(214, 17%, 51%);
+      }
+      .share-circle-bg {
+        background-color: hsl(214, 17%, 51%);
+      }
+      .share-circle-icon-color {
+        background-color: hsl(0, 0%, 100%);
+      }
+      footer .circle .share-icon {
+        mask: url('./images/icon-share.svg');
+        mask-repeat: no-repeat;
+        mask-position: center;
+        height: 100%;
+
+      }
+
+
+      .circle {
+        transition-property: transform;
+        transition-duration: .5s;
+        transition-timing-function: ease-in;
+      }
+
+      .circle:hover {
+        cursor: pointer;
+        transform: scale(1.3);
+      }
+
+      .fall-animation {
+        animation-name: fall;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in-out;
+        animation-direction: normal;
+        animation-fill-mode: none;
+      }
+
+      .reposition-fallen {
+        top: -100px;
+      }
+
+      .drop-animation {
+        animation-name: drop;
+        animation-duration: .25s;
+        animation-delay: .5s;
+        animation-timing-function: ease-out;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(20px);
+        }
+        25% {
+          transform: translateY(35px);
+        }
+        100% {
+          transform: translateY(100vh);
+        }
+      }
+
+      @keyframes drop {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(100px);
+        }
+      }
+
+      @media (min-width: 768px) {
+        main {
+          flex-direction: row;
+
+          width: 46rem;
+          height: 20rem;
+        }
+
+        .hero-img {
+          flex: 1 40rem;
+          height: 100%;
+          border-radius: .75rem 0 0 .75rem;
+          background-size: 125% 100%;
+        }
+
+        .hero-img img {
+          min-height: 100%;
+        }
+
+        .content {
+          flex: 1 100%;
+          border-top-right-radius: .75rem;
+          height: 100%;
+          padding: 2rem 3rem 1rem;
+        }
+
+        footer {
+          position: relative !important;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: .75rem;
+        }
+
+        footer .profile {
+          position: static !important;
+        }
+
+        footer .profile {
+          padding: 0 3rem 2rem 3rem;
+          border-bottom-right-radius: .75rem;
+        }
+        .content h1 {
+          font-size: 1.3rem;
+          line-height: 2rem;
+        }
+
+        footer .share {
+          width: 15rem;
+          border-radius: .5rem;
+          top: -9rem;
+          right: -3.5rem;
+          z-index: 99;
+          opacity: 0;
+        }
+
+        .pointer {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background-color: hsl(217, 19%, 35%);
+          top: -6.6rem;
+          right: 3.5rem;
+          z-index: 99;
+          transform: rotate(45deg);
+          opacity: 0;
+        }
+
+        footer .share .circle {
+          display: none;
+        }
+
+        .show-animation {
+          animation: show 0.5s ease-in forwards;
+        }
+
+        @keyframes show {
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="hero-img default-bg">
+      </div>
+
+      <div class="container">
+        <section class="content side-padding default-bg">
+          <h1>
+            Shift the overall look and feel by adding these wonderful touches to
+            furniture in your home
+          </h1>
+          <p>
+            Ever been in a room and felt like something was missing? Perhaps it
+            felt slightly bare and uninviting. I've got some simple tips to help
+            you make any room feel complete.
+          </p>
+        </section>
+
+        <footer id="profile" class="default-bg">
+          <section class="side-padding profile default-bg">
+            <img class="avatar" src="./images/avatar-michelle.jpg" alt="Avatar" />
+            <div>
+              <h2>Michelle Appleton</h2>
+              <h3>28 Jun 2020</h3>
+            </div>
+            <div class="circle profile-circle-bg" id="profile-share-icon">
+              <div class="share-icon profile-circle-icon-color"></div>
+            </div>
+          </section>
+
+        </footer>
+
+        <footer id="share" class="">
+          <section class="share side-padding reposition-fallen">
+            <span>Share</span>
+            <img src="./images/icon-facebook.svg" alt="Facebook">
+            <img src="./images/icon-twitter.svg" alt="Twitter">
+            <img src="./images/icon-pinterest.svg" alt="Pinterest">
+            <div class="circle share-circle-bg" id="share-share-icon">
+              <div class="share-icon share-circle-icon-color"></div>
+            </div>
+          </section>
+          <div class="pointer"></div>
+        </footer>
+      </div>
+
+    </main>
+
+    <script>
+      window.addEventListener('resize', () => {
+        const profileSection = document.querySelector('footer .profile')
+        const shareSection = document.querySelector('footer .share')
+
+        profileSection.classList.remove(
+          'drop-animation',
+          'fall-animation',
+          'reposition-fallen'
+        )
+        shareSection.classList.remove(
+          'drop-animation',
+          'fall-animation',
+          'show-animation'
+        )
+
+        const circle = document.querySelector('.profile .circle')
+        circle.classList.remove('share-circle-bg')
+        circle.classList.add('profile-circle-bg')
+        const icon = circle.querySelector('.share-icon')
+        icon.classList.remove('share-circle-icon-color')
+        icon.classList.add('profile-circle-icon-color')
+        document.querySelector('.pointer')?.classList?.remove('show-animation')
+      })
+
+      document.getElementById('profile-share-icon').addEventListener('click', event => {
+        const profileSection = document.querySelector('footer .profile')
+        const shareSection = document.querySelector('footer .share')
+
+        if (window.innerWidth < 768) {
+          profileSection.classList.remove('drop-animation', 'fall-animation', 'reposition-fallen')
+          profileSection.classList.add('fall-animation')
+          shareSection.classList.add('drop-animation')
+
+          setTimeout(() => {
+            profileSection.classList.add('reposition-fallen')
+          }, 1000)
+
+          return
+        }
+
+        shareSection.classList.toggle('show-animation')
+        document.querySelector('.pointer').classList.toggle('show-animation')
+
+        const shareIcon = document.querySelector('#profile-share-icon');
+        shareIcon.classList.toggle('share-circle-bg')
+        shareIcon.querySelector('.share-icon').classList.toggle('share-circle-icon-color')
+      })
+
+      document.getElementById('share-share-icon').addEventListener('click', event => {
+        const profileSection = document.querySelector('footer .profile')
+        const shareSection = document.querySelector('footer .share')
+
+        shareSection.classList.remove('drop-animation', 'fall-animation', 'reposition-fallen')
+        shareSection.classList.add('fall-animation')
+        profileSection.classList.add('drop-animation')
+
+        setTimeout(() => {
+          shareSection.classList.add('reposition-fallen')
+        }, 1000)
+      })
+  </script>
+  </body>
+</html>
