@@ -144,14 +144,10 @@
       }
 
       footer .profile .circle {
-        background-color: hsla(212, 23%, 69%, 0.3);
         height: 30px;
         width: 30px;
         border-radius: 50%;
         margin-left: auto;
-        background-image: url('./images/icon-share.svg');
-        background-repeat: no-repeat;
-        background-position: center;
       }
 
       footer .share {
@@ -174,22 +170,34 @@
         font-weight: 700;
       }
 
-      footer .share .circle {
+      footer  .circle {
         margin-left: auto;
         height: 30px;
         width: 30px;
         border-radius: 50%;
-        background-color: hsl(214, 17%, 51%);
+
       }
 
-      footer .share .circle .share-icon {
+      .profile-circle-bg {
+        background-color: hsla(212, 23%, 69%, 0.3);
+      }
+      .profile-circle-icon-color {
+        background-color: hsl(214, 17%, 51%);
+      }
+      .share-circle-bg {
+        background-color: hsl(214, 17%, 51%);
+      }
+      .share-circle-icon-color {
+        background-color: hsl(0, 0%, 100%);
+      }
+      footer .circle .share-icon {
         mask: url('./images/icon-share.svg');
         mask-repeat: no-repeat;
         mask-position: center;
-        background-color: white;
         height: 100%;
 
       }
+
 
       .circle {
         transition-property: transform;
@@ -289,15 +297,7 @@
           line-height: 2rem;
         }
 
-        /**temp*/
-        footer .profile {
-          /* display: none !important; */
-        }
-        .content {
-          /* margin-bottom: 2rem; */
-        }
         footer .share {
-          /* display: none !important; */
           width: 15rem;
           border-radius: .5rem;
           top: -9rem;
@@ -359,7 +359,8 @@
               <h2>Michelle Appleton</h2>
               <h3>28 Jun 2020</h3>
             </div>
-            <div class="circle" id="profile-share-icon">
+            <div class="circle profile-circle-bg" id="profile-share-icon">
+              <div class="share-icon profile-circle-icon-color"></div>
             </div>
           </section>
 
@@ -371,8 +372,8 @@
             <img src="./images/icon-facebook.svg" alt="Facebook">
             <img src="./images/icon-twitter.svg" alt="Twitter">
             <img src="./images/icon-pinterest.svg" alt="Pinterest">
-            <div class="circle" id="share-share-icon">
-              <div class="share-icon"></div>
+            <div class="circle share-circle-bg" id="share-share-icon">
+              <div class="share-icon share-circle-icon-color"></div>
             </div>
           </section>
           <div class="pointer"></div>
@@ -382,34 +383,66 @@
     </main>
 
     <script>
-    document.getElementById('profile-share-icon').addEventListener('click', event => {
-      const profileSection = document.querySelector('footer .profile')
-      const shareSection = document.querySelector('footer .share')
+      window.addEventListener('resize', () => {
+        const profileSection = document.querySelector('footer .profile')
+        const shareSection = document.querySelector('footer .share')
 
-      // profileSection.classList.remove('drop-animation', 'fall-animation', 'reposition-fallen')
-      // profileSection.classList.add('fall-animation')
-      // shareSection.classList.add('drop-animation')
+        profileSection.classList.remove(
+          'drop-animation',
+          'fall-animation',
+          'reposition-fallen'
+        )
+        shareSection.classList.remove(
+          'drop-animation',
+          'fall-animation',
+          'show-animation'
+        )
 
-      // setTimeout(() => {
-      //   profileSection.classList.add('reposition-fallen')
-      // }, 1000)
-      shareSection.classList.add('show-animation')
-      document.querySelector('.pointer').classList.add('show-animation')
+        const circle = document.querySelector('.profile .circle')
+        circle.classList.remove('share-circle-bg')
+        circle.classList.add('profile-circle-bg')
+        const icon = circle.querySelector('.share-icon')
+        icon.classList.remove('share-circle-icon-color')
+        icon.classList.add('profile-circle-icon-color')
+        document.querySelector('.pointer')?.classList?.remove('show-animation')
+      })
 
-    })
+      document.getElementById('profile-share-icon').addEventListener('click', event => {
+        const profileSection = document.querySelector('footer .profile')
+        const shareSection = document.querySelector('footer .share')
 
-    document.getElementById('share-share-icon').addEventListener('click', event => {
-      const profileSection = document.querySelector('footer .profile')
-      const shareSection = document.querySelector('footer .share')
+        if (window.innerWidth < 768) {
+          profileSection.classList.remove('drop-animation', 'fall-animation', 'reposition-fallen')
+          profileSection.classList.add('fall-animation')
+          shareSection.classList.add('drop-animation')
 
-      shareSection.classList.remove('drop-animation', 'fall-animation', 'reposition-fallen')
-      shareSection.classList.add('fall-animation')
-      profileSection.classList.add('drop-animation')
+          setTimeout(() => {
+            profileSection.classList.add('reposition-fallen')
+          }, 1000)
 
-      setTimeout(() => {
-        shareSection.classList.add('reposition-fallen')
-      }, 1000)
-    })
+          return
+        }
+
+        shareSection.classList.toggle('show-animation')
+        document.querySelector('.pointer').classList.toggle('show-animation')
+
+        const shareIcon = document.querySelector('#profile-share-icon');
+        shareIcon.classList.toggle('share-circle-bg')
+        shareIcon.querySelector('.share-icon').classList.toggle('share-circle-icon-color')
+      })
+
+      document.getElementById('share-share-icon').addEventListener('click', event => {
+        const profileSection = document.querySelector('footer .profile')
+        const shareSection = document.querySelector('footer .share')
+
+        shareSection.classList.remove('drop-animation', 'fall-animation', 'reposition-fallen')
+        shareSection.classList.add('fall-animation')
+        profileSection.classList.add('drop-animation')
+
+        setTimeout(() => {
+          shareSection.classList.add('reposition-fallen')
+        }, 1000)
+      })
   </script>
   </body>
 </html>
