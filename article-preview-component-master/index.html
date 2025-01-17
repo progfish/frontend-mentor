@@ -303,7 +303,7 @@
           top: -9rem;
           right: -3.5rem;
           z-index: 99;
-
+          opacity: 0;
         }
 
         .pointer {
@@ -315,10 +315,21 @@
           right: 3.5rem;
           z-index: 99;
           transform: rotate(45deg);
+          opacity: 0;
         }
 
         footer .share .circle {
           display: none;
+        }
+
+        .show-animation {
+          animation: show 0.5s ease-in forwards;
+        }
+
+        @keyframes show {
+          100% {
+            opacity: 1;
+          }
         }
       }
     </style>
@@ -368,9 +379,6 @@
         </footer>
       </div>
 
-
-
-
     </main>
 
     <script>
@@ -378,13 +386,16 @@
       const profileSection = document.querySelector('footer .profile')
       const shareSection = document.querySelector('footer .share')
 
-      profileSection.classList.remove('drop-animation', 'fall-animation', 'reposition-fallen')
-      profileSection.classList.add('fall-animation')
-      shareSection.classList.add('drop-animation')
+      // profileSection.classList.remove('drop-animation', 'fall-animation', 'reposition-fallen')
+      // profileSection.classList.add('fall-animation')
+      // shareSection.classList.add('drop-animation')
 
-      setTimeout(() => {
-        profileSection.classList.add('reposition-fallen')
-      }, 1000)
+      // setTimeout(() => {
+      //   profileSection.classList.add('reposition-fallen')
+      // }, 1000)
+      shareSection.classList.add('show-animation')
+      document.querySelector('.pointer').classList.add('show-animation')
+
     })
 
     document.getElementById('share-share-icon').addEventListener('click', event => {
