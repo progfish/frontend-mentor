@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Article preview component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Manrope";
+        font-size: 13px;
+        font-weight: 500;
+        background-color: hsla(212, 23%, 69%, 0.5);
+
+        width: 100vw;
+        height: 100vh;
+        padding: 0 1.5rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .default-bg {
+        background-color: hsl(210, 46%, 95%);
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        max-width: 37rem;
+        max-height: 30rem;
+        border-radius: 1rem;
+      }
+
+      img {
+        max-height: 16rem;
+        border-radius: 1rem 1rem 0 0;
+      }
+      .content {
+        background-color: hsl(210, 46%, 95%);
+        padding: 2rem 2rem 1rem;
+      }
+
+      h1 {
+        color: hsl(217, 19%, 35%);
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        line-height: 1.3rem;
+        font-size: 0.65rem;
+        color: hsl(214, 17%, 51%);
+      }
+
+      footer {
+        position: relative;
+      }
+      .profile {
+        display: flex;
+        align-items: center;
+        border-radius: 0 0 1rem 1rem;
+        /* padding: 1rem 2rem 1.5rem; */
+        /* position: absolute; */
+        width: 100%;
+        z-index: 2;
+      }
+
+      .reveal-share {
+        animation: revealShare 1s ease-in forwards;
+      }
+
+      .reveal-profile {
+        animation: revealProfile 1s ease-out forwards;
+      }
+
+      .avatar {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+
+      h2 {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: hsl(217, 19%, 35%);
+        margin-bottom: 0.25rem;
+      }
+
+      h3 {
+        font-weight: 500;
+        font-size: 0.85rem;
+        color: hsl(214, 17%, 51%);
+      }
+
+      .share-icon {
+        height: 15px;
+        width: 15px;
+      }
+
+      .circle {
+        margin-left: auto;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsla(212, 23%, 69%, 0.5);
+        transition: border-radius 0.5s ease-in-out;
+      }
+
+      .circle:hover {
+        cursor: pointer;
+        border-radius: 0;
+      }
+
+      .share {
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+
+        background-color: hsl(217, 19%, 35%);
+        border-radius: 0 0 1rem 1rem;
+        position: absolute;
+        width: 100%;
+        padding: 1rem 2rem;
+        z-index: 1;
+      }
+
+      .share span {
+        text-transform: uppercase;
+        color: hsl(212, 23%, 69%);
+        font-size: 0.9rem;
+        letter-spacing: 0.4rem;
+      }
+
+      .share img,
+      .profile img {
+        border-radius: 0;
+        width: 20px;
+        height: 20px;
+      }
+
+      .share .share-icon {
+        mask: url("./images/icon-share.svg") no-repeat center;
+        background-color: white;
+      }
+
+      .profile .share-icon {
+        mask: url("./images/icon-share.svg") no-repeat center;
+        background-color: hsla(212, 23%, 69%, 1);
+      }
+
+      @keyframes revealShare {
+        0% {
+          clip-path: inset(0);
+        }
+        100% {
+          clip-path: inset(0 100% 0 0);
+        }
+      }
+
+      @keyframes revealProfile {
+        0% {
+          clip-path: inset(0 100% 0 0);
+        }
+        100% {
+          clip-path: inset(0);
+        }
+      }
+
+      @media (min-width: 650px) {
+        main {
+          flex-direction: row;
+        }
+        /* main > img {
+        flex: 1 25%;
+      }
+
+      .content {
+        flex: 1 30%;
+      } */
+
+        .content {
+          /* padding: 0; */
+          border-radius: 0 1rem 1rem 0;
+          flex: 1 67%;
+        }
+
+        main > img {
+          max-width: 100%;
+          max-height: 100%;
+          overflow: hidden;
+
+          border-radius: 1rem 0 0 1rem;
+          flex: 1 45%;
+        }
+        /* .hero-img {
+        flex: 1;
+      } */
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="./images/drawers.jpg" alt="Drawers" />
+
+      <section class="content default-bg">
+        <h1>
+          Shift the overall look and feel by adding these wonderful touches to
+          furniture in your home
+        </h1>
+        <p>
+          Ever been in a room and felt like something was missing? Perhaps it
+          felt slightly bare and uninviting. I've got some simple tips to help
+          you make any room feel complete.
+        </p>
+
+        <footer class="profile default-bg">
+          <img class="avatar" src="./images/avatar-michelle.jpg" alt="Avatar" />
+          <div>
+            <h2>Michelle Appleton</h2>
+            <h3>28 Jun 2020</h3>
+          </div>
+          <div class="circle" id="profile-share-icon">
+            <div class="share-icon"></div>
+          </div>
+          <!-- <section class="share">
+          <span>Share</span>
+          <img src="./images/icon-facebook.svg" alt="Facebook">
+          <img src="./images/icon-twitter.svg" alt="Twitter">
+          <img src="./images/icon-pinterest.svg" alt="Pinterest">
+          <div class="circle" id="share-share-icon">
+            <div class="share-icon"></div>
+          </div>
+        </section> -->
+        </footer>
+      </section>
+    </main>
+    <!-- <script>
+    document.getElementById('profile-share-icon').addEventListener('click', event => {
+      const profileSection = document.querySelector('.profile')
+      profileSection.classList.remove('reveal-profile')
+      profileSection.classList.add('reveal-share')
+    })
+
+    document.getElementById('share-share-icon').addEventListener('click', event => {
+      const profileSection = document.querySelector('.profile')
+      profileSection.classList.remove('reveal-share')
+      profileSection.classList.add('reveal-profile')
+    })
+  </script> -->
+  </body>
+</html>
