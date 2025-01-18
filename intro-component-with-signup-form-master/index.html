@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        min-height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        background-color: hsl(0, 100%, 74%);
+        background-image: url('./images/bg-intro-mobile.png');
+
+        padding: 2rem 1.5rem;
+        font-family: 'Poppins';
+        font-size: 1rem;
+    }
+
+    main {
+        width: 20rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      color: hsl(0, 0%, 100%);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .content {
+      text-align: center;
+      font-weight: 400;
+      color: hsl(0, 0%, 100%);
+      margin-bottom: 3rem;
+    }
+
+    .trial-container {
+      padding: 1rem 4rem;
+      background-color: hsl(248, 32%, 49%);
+      width: 100%;
+      color: hsl(0, 0%, 100%);
+      font-weight: 600;
+      text-align: center;
+      border-radius: .5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 .5rem 1rem hsl(0, 0%, 30%);
+      font-size: .9rem;
+    }
+
+    .trial-container span {
+      font-weight: 300;
+    }
+
+    form {
+      background-color: hsl(0, 0%, 100%);
+      padding: 1.5rem 1.5rem .5rem;
+      border-radius: .5rem;
+      box-shadow: 0 .5rem 1rem hsl(0, 0%, 30%);
+    }
+
+    input {
+      border-radius: .25rem;
+      border: 1px solid hsl(246, 25%, 77%);
+      outline: none;
+      width: 100%;
+      height: 3rem;
+      padding-left: 1rem;
+      font-weight: 600;
+      color: hsl(249, 10%, 26%);
+    }
+
+    input::placeholder {
+      color: hsla(249, 10%, 26%, .6);
+      font-weight: 600;
+    }
+
+    button {
+      width: 100%;
+      outline: none;
+      border: none;
+      color: hsl(0, 0%, 100%);
+      text-transform: uppercase;
+      background-color: hsl(154, 59%, 51%);
+      padding: 1rem;
+      border-radius: .25rem;
+      letter-spacing: .1rem;
+      margin-bottom: .5rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: hsla(154, 59%, 51%, .7);
+    }
+
+    form p {
+      color: hsl(246, 25%, 77%);
+      text-align: center;
+      font-size: .62rem;
+      padding: 0 1.5rem .5rem 1.5rem;
+      font-weight: 500;
+      line-height: 1.1rem;
+    }
+
+    form span {
+      color:hsl(0, 100%, 74%);
+      font-weight: 700;
+    }
+
+    .input-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: .75rem;
+    }
+
+    .is-invalid {
+      border: 2px solid hsl(0, 100%, 74%);
+    }
+
+    .is-invalid::placeholder {
+      color: hsl(0, 100%, 74%);
+    }
+
+    .error-icon {
+      position: absolute;
+      top: .75rem;
+      right: 1.25rem;
+    }
+
+    .error-message {
+      text-align: end;
+      color:hsl(0, 100%, 74%);
+      padding: 0;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    @media (min-width: 48rem) {
+      body {
+        background-image: url('./images/bg-intro-desktop.png');
+      }
+      main {
+        flex-direction: row;
+        flex-basis: 65rem;
+      }
+
+      .content {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: start;
+        padding-right: 2rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .content p {
+        font-size: .9rem;
+      }
+
+      .free-trial {
+        flex: 1 0 50%;
+      }
+      form {
+        padding: 2rem ;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="content">
+      <h1>Learn to code by watching others</h1>
+      <p>
+        See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.
+      </p>
+    </section>
+
+    <div class="free-trial">
+      <div class="trial-container">
+        <p>Try it free 7 days <span>then $20/mo. thereafter</span></p>
+      </div>
+
+      <form >
+        <div class="input-container">
+          <input type="text" placeholder="First Name">
+          <div class="error-container hide">
+            <img class="error-icon" src="./images/icon-error.svg" alt="Error">
+            <p class="error-message"><i>First Name cannot be empty</i></p>
+          </div>
+
+        </div>
+        <div class="input-container">
+          <input type="text" placeholder="Last Name">
+          <div class="error-container hide">
+            <img class="error-icon" src="./images/icon-error.svg" alt="Error">
+            <p class="error-message"><i>Last Name cannot be empty</i></p>
+          </div>
+        </div>
+        <div class="input-container">
+          <input type="email" placeholder="Email Address">
+          <div class="error-container hide">
+            <img class="error-icon" src="./images/icon-error.svg" alt="Error">
+            <p class="error-message"><i>Looks like this is not an email</i></p>
+          </div>
+        </div>
+        <div class="input-container">
+          <input type="password" placeholder="Password">
+          <div class="error-container hide">
+            <img class="error-icon" src="./images/icon-error.svg" alt="Error">
+            <p class="error-message"><i>Password cannot be empty</i></p>
+          </div>
+        </div>
+
+        <button type="button">Claim your free trial</button>
+        <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+      </form>
+    </div>
+
+  </main>
+
+  <script>
+    document.querySelector('button').addEventListener('click', () => {
+      document.querySelectorAll('input').forEach(input => {
+        const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+        if ((input.getAttribute('type') === 'email' && !emailRegex.test(input.value)) || !input.value) {
+          input.classList.add('is-invalid')
+          input.nextElementSibling.classList.remove('hide')
+        } else {
+          input.classList.remove('is-invalid')
+          input.nextElementSibling.classList.add('hide')
+        }
+      })
+    })
+  </script>
+</body>
+</html>
