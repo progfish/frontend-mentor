@@ -1,0 +1,16 @@
+.hero-img {
+    height: 15rem;
+    background-image: url('../images/hero-mobile.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  @media (min-width: 48rem) {
+    .hero-img {
+        order: 2;
+        flex: 1 1 100%;
+        background-image: url('../images/hero-desktop.jpg');
+        width: 45%;
+      }
+  }
