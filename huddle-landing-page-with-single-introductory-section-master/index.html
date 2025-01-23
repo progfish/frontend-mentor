@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Huddle landing page with single introductory section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans';
+      font-weight: 400;
+
+      min-height: 100vh;
+      width: 100vw;
+
+      background-image: url('./images/bg-mobile.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 45%;
+      background-color: hsl(257, 40%, 49%);
+
+      padding: 2rem 2.4rem;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    main {
+      flex: 1 100%;
+
+      min-height: 30rem;
+      max-width: 19rem;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      margin-bottom: 3.25rem;
+    }
+
+    .logo {
+      height: 2rem;
+      width: 7.7rem;
+    }
+
+    .hero {
+      margin-bottom: 3rem;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 13.5rem;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'Poppins';
+      font-weight: 600;
+      font-size: 1.5rem;
+
+      text-align: center;
+      color: hsl(0, 0%, 100%);
+
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: .98rem;
+      text-align: center;
+      color: hsl(0, 0%, 100%);
+      line-height: 1.5rem;
+
+      margin-bottom: 1.5rem;
+    }
+
+    button {
+      outline: none;
+      border: none;
+      border-radius: 2rem;
+      padding: 1rem;
+      width: 13rem;
+      color: hsl(257, 40%, 49%);
+      font-size: .9rem;
+      box-shadow: 0 .4rem 0 hsl(257, 36%, 41%);
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: hsl(300, 69%, 71%);
+      color: hsl(0, 0%, 100%);
+      box-shadow: 0 .6rem 0 hsl(257, 36%, 41%);
+    }
+
+    .socials {
+      width: 100%;
+      flex: 1 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 1rem;
+
+      margin-bottom: 1rem;
+    }
+
+    .social-circle {
+      height: 2rem;
+      width: 2rem;
+
+      color: white;
+      border: 1px solid white;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .social-circle:hover {
+      border-color: hsl(300, 69%, 71%);
+    }
+
+    .social-circle:hover .social-icon {
+      background-color: hsl(300, 69%, 71%);
+    }
+
+    .social-icon {
+      height: 1rem;
+      width:  1rem;
+
+      mask-position: center;
+      mask-repeat: no-repeat;
+      background-color: white;
+    }
+
+    .facebook {
+      mask-image: url('./images/logo-facebook.svg');
+    }
+
+    .twitter {
+      mask-image: url('./images/logo-twitter.svg');
+    }
+
+    .instagram {
+      mask-image: url('./images/logo-instagram.svg');
+    }
+
+    /* Tablet */
+    @media (min-width: 768px) {
+        main {
+          max-width: 38rem;
+        }
+
+        .logo {
+          height: auto;
+          width: 10rem;
+        }
+
+        .hero {
+          margin-bottom: 2.5rem;
+        }
+
+        .hero-img {
+          height: 18rem;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1.05rem;
+        }
+
+    }
+
+    /* Desktop */
+    @media (min-width: 992px) {
+        body {
+          padding: 3rem 4rem;
+          background-image: url('./images/bg-desktop.svg');
+          background-size: 100% 100%;
+        }
+
+        main {
+          max-width: 1313px;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+        header {
+          margin-bottom: 4.5rem;
+          flex: 1 100%;
+        }
+
+        .content {
+          padding-top: 3rem;
+          padding-left: 3rem;
+          align-items: start;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+          padding: 0;
+          text-align: start;
+        }
+
+        p {
+          text-align: start;
+        }
+
+        .logo {
+          height: auto;
+          width: 15rem;
+        }
+
+        .hero {
+          flex: 1 60%;
+          margin-bottom: 0;
+        }
+
+        .hero-img {
+          height: 32.5rem;
+        }
+
+        .content {
+          flex: 1 40%;
+        }
+
+        .socials {
+          justify-content: end;
+        }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="./images/logo.svg" alt="Logo" class="logo">
+    </header>
+
+    <div class="hero">
+      <img src="./images/illustration-mockups.svg" alt="Illustration Mockup" class="hero-img">
+    </div>
+
+    <div class="content">
+      <h1>
+        Build The Community Your Fans Will Love
+      </h1>
+      <p>
+        Huddle re-imagines the way we build communities. You have a voice, but so does your audience.
+        Create connections with your users as you engage in genuine discussion.
+      </p>
+      <button>Register</button>
+    </div>
+
+    <div class="socials">
+      <div class="social-circle">
+        <div class="social-icon facebook"></div>
+      </div>
+      <div class="social-circle">
+        <div class="social-icon twitter"></div>
+      </div>
+      <div class="social-circle">
+        <div class="social-icon instagram"></div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
