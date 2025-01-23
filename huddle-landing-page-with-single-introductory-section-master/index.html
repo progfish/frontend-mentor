@@ -34,7 +34,7 @@
       background-size: 100% 45%;
       background-color: hsl(257, 40%, 49%);
 
-      padding: 2.5rem 2rem;
+      padding: 2rem 2.4rem;
 
       display: flex;
       justify-content: center;
@@ -44,53 +44,51 @@
       flex: 1 100%;
 
       min-height: 30rem;
-      max-width: 20rem;
+      max-width: 19rem;
 
       display: flex;
       flex-direction: column;
     }
 
     header {
-      height: 3.5rem;
-      width: 100%;
+      margin-bottom: 3.25rem;
+    }
 
-      background-image: url('./images/logo.svg');
-      background-repeat: no-repeat;
-      background-size: 8.5rem;
-      background-position: top left;
-
-      margin-bottom: 1.5rem;
+    .logo {
+      height: 2rem;
+      width: 7.7rem;
     }
 
     .hero {
-      height: 14rem;
-
-      background-image: url('./images/illustration-mockups.svg');
-      background-repeat: no-repeat;
-      background-size: 100% 13rem;
-      background-position: center;
-
       margin-bottom: 3rem;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 13.5rem;
     }
 
     .content {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 1rem;
     }
+
     h1 {
       font-family: 'Poppins';
       font-weight: 600;
-      font-size: 1.7rem;
+      font-size: 1.5rem;
 
       text-align: center;
       color: hsl(0, 0%, 100%);
 
+      padding: 0 1rem;
       margin-bottom: 1rem;
     }
 
     p {
-      font-size: 1.02rem;
+      font-size: .98rem;
       text-align: center;
       color: hsl(0, 0%, 100%);
       line-height: 1.5rem;
@@ -118,20 +116,19 @@
 
     .socials {
       width: 100%;
-      height: 5rem;
+      flex: 1 100%;
 
       display: flex;
       justify-content: center;
       align-items: flex-end;
       gap: 1rem;
+
+      margin-bottom: 1rem;
     }
 
     .social-circle {
-      /* height: 2.25rem;
-      width:  2.25rem; */
       height: 2rem;
       width: 2rem;
-
 
       color: white;
       border: 1px solid white;
@@ -140,6 +137,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+    }
+
+    .social-circle:hover {
+      border-color: hsl(300, 69%, 71%);
+    }
+
+    .social-circle:hover .social-icon {
+      background-color: hsl(300, 69%, 71%);
     }
 
     .social-icon {
@@ -163,64 +169,103 @@
       mask-image: url('./images/logo-instagram.svg');
     }
 
-    /* @media (min-width: 48rem) {
-      body {
-        background-image: url('./images/bg-desktop.svg');
-        background-size: 100% 100%;
+    /* Tablet */
+    @media (min-width: 768px) {
+        main {
+          max-width: 38rem;
+        }
 
-        padding: 4rem;
-      }
-      main {
-        flex: 1 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
+        .logo {
+          height: auto;
+          width: 10rem;
+        }
 
-        max-width: 100%;
-        min-height: 0;
-      }
+        .hero {
+          margin-bottom: 2.5rem;
+        }
 
-      header {}
-      .hero {
-        flex: 0 60%;
+        .hero-img {
+          height: 18rem;
+        }
 
-        margin-bottom: 0;
-        height: auto;
-        max-height: 40rem;
+        h1 {
+          font-size: 2rem;
+        }
 
-        background-size: 100% 100%;
-      }
+        p {
+          font-size: 1.05rem;
+        }
 
-      .content {
-        flex: 0 40%;
-        align-items: flex-start;
+    }
 
-        padding: 3rem 3rem;
-      }
+    /* Desktop */
+    @media (min-width: 992px) {
+        body {
+          padding: 3rem 4rem;
+          background-image: url('./images/bg-desktop.svg');
+          background-size: 100% 100%;
+        }
 
-      .socials {
-        height: auto;
-        justify-content: flex-end;
-      }
+        main {
+          max-width: 1313px;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
 
-      h1, p {
-        text-align: start;
-      }
+        header {
+          margin-bottom: 4.5rem;
+          flex: 1 100%;
+        }
 
-      h1 {
-        font-size: 2rem;
-      }
+        .content {
+          padding-top: 3rem;
+          padding-left: 3rem;
+          align-items: start;
+        }
 
-      p {
-        font-size: .93rem;
-      }
-    } */
+        h1 {
+          font-size: 2.5rem;
+          padding: 0;
+          text-align: start;
+        }
+
+        p {
+          text-align: start;
+        }
+
+        .logo {
+          height: auto;
+          width: 15rem;
+        }
+
+        .hero {
+          flex: 1 60%;
+          margin-bottom: 0;
+        }
+
+        .hero-img {
+          height: 32.5rem;
+        }
+
+        .content {
+          flex: 1 40%;
+        }
+
+        .socials {
+          justify-content: end;
+        }
+    }
   </style>
 </head>
 <body>
   <main>
-    <header></header>
+    <header>
+      <img src="./images/logo.svg" alt="Logo" class="logo">
+    </header>
 
-    <div class="hero"></div>
+    <div class="hero">
+      <img src="./images/illustration-mockups.svg" alt="Illustration Mockup" class="hero-img">
+    </div>
 
     <div class="content">
       <h1>
