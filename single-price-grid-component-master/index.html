@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-size: 1rem;
+      font-weight: 400;
+      font-family: 'Karla';
+      background-color: hsl(204, 43%, 93%);
+
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 2rem 2rem;
+    }
+
+    main {
+      box-shadow: .5rem .5rem 1rem .25rem hsl(0, 0%, 90%);
+      border-radius: .5rem;
+
+      display: flex;
+      flex-direction: column;
+
+      min-height: 30rem;
+      max-width: 19rem;
+    }
+
+    .card {
+      padding: 1.75rem 1.5rem;
+    }
+
+    .community {
+      border-radius: .5rem .5rem 0 0;
+    }
+
+    .why-us {
+      border-radius: 0 0 .5rem .5rem;
+    }
+
+    h1 {
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .community {
+      background-color: hsl(0, 0%, 100%);
+    }
+
+    .community h1 {
+      font-size: 1.2rem;
+      color: hsl(179, 62%, 43%);
+    }
+
+    .community h2 {
+      font-size: .9rem;
+      color: hsl(71, 73%, 54%);
+      margin-bottom: 1rem;
+    }
+
+    .community p {
+      font-size: .83rem;
+      color: hsl(218, 22%, 67%);
+      line-height: 1.3rem;
+    }
+
+    .subscription {
+      background-color: hsl(179, 62%, 43%);
+    }
+
+    .subscription h1 {
+      color: hsl(0, 0%, 100%);
+      font-size: 1.05rem;
+    }
+
+    .subscription p {
+      color: hsl(204, 43%, 93%);
+      margin-bottom: 2rem;
+    }
+    .monthly-price {
+      display: flex;
+      align-items: center;
+      margin-bottom: .5rem;
+    }
+
+    .price {
+      color: hsl(0, 0%, 100%);
+      font-size: 1.75rem;
+      margin-right: 1rem;
+    }
+
+    .per-month {
+      color: hsl(204, 43%, 93%);
+      font-size: 1rem;
+      font-weight: 200;
+    }
+
+    button {
+      outline: none;
+      border: none;
+      background-color: hsl(71, 73%, 54%);
+      height: 3rem;
+      border-radius: .3rem;
+      width: 100%;
+      color: hsl(0, 0%, 100%);
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 .5rem 1rem 0 hsl(179, 62%, 35%);
+      cursor: pointer;
+    }
+
+    .why-us {
+      background-color: hsl(179, 57%, 51%);
+    }
+
+    .why-us h1 {
+      font-size: 1.05rem;
+      color: hsl(0, 0%, 100%);
+    }
+
+    ul {
+      list-style-type: none;
+      color: hsl(204, 43%, 93%);
+      font-weight: 200;
+      font-size: .9rem;
+      line-height: 1.2rem;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        max-width: 40rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .community {
+        flex: 1 100%;
+      }
+
+      .subscription, .why-us {
+        flex: 1 50%;
+      }
+
+      .card {
+        padding: 2.25rem 2.5rem;
+      }
+
+      .subscription {
+        border-bottom-left-radius: .5rem;
+      }
+
+      .why-us {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: .5rem;
+      }
+
+      .community h1 {
+        font-size: 1.4rem;
+      }
+
+      .community h2 {
+        font-size: 1.1rem
+      }
+
+      .community p {
+        font-size: 1.03rem;
+        line-height: 1.8rem;
+      }
+
+      .subscription h1 {
+        font-size: 1.2rem;
+      }
+
+      .price {
+        font-size: 2.25rem;
+      }
+
+      .why-us h1 {
+        font-size: 1.2rem;
+      }
+
+      ul {
+        line-height: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card community">
+      <h1>Join our community</h1>
+      <h2>30-day, hassle-free money back guarantee</h2>
+      <p>Gain access to our full library of tutorials along with expert code reviews.
+        Perfect for any developers who are serious about honing their skills.</p>
+    </div>
+    <div class="card subscription">
+      <h1>Monthly Subscription</h1>
+      <div class="monthly-price">
+        <span class="price">&dollar;29 </span><span class="per-month">per month</span>
+      </div>
+      <p>Full access for less than &dollar;1 a day</p>
+      <button>Sign Up</button>
+    </div>
+    <div class="card why-us">
+      <h1>Why Us</h1>
+      <ul>
+        <li>Tutorials by industry experts</li>
+        <li>Peer &amp; expert code review</li>
+        <li>Coding exercises</li>
+        <li>Access to our GitHub repos</li>
+        <li>Community forum</li>
+        <li>Flashcard decks</li>
+        <li>New videos every week</li>
+      </ul>
+    </div>
+  </main>
+  <!--
+
+  Sign Up
+
+  Why Us
+
+  Tutorials by industry experts
+  Peer &amp; expert code review
+  Coding exercises
+  Access to our GitHub repos
+  Community forum
+  Flashcard decks
+  New videos every week -->
+
+  <!-- <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+</body>
+</html>
