@@ -1,0 +1,140 @@
+@media (min-width: 968px) {
+    img {
+      min-height: 0;
+    }
+    body {
+      justify-content: center;
+      align-items: center;
+    }
+    main {
+      max-width: 56.3rem;
+
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      height: 45rem;
+    }
+
+    .social-media {
+      padding: 3rem;
+
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 4;
+    }
+
+    .social-media img {
+      width: 9rem;
+    }
+
+    .social-media p {
+      font-size: .8rem;
+    }
+
+    .manage {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+
+      grid-column: 2;
+      grid-row: 5 / span 3;
+
+      overflow: hidden;
+    }
+
+    .manage img {
+      width: 17rem;
+    }
+    .maintain {
+      grid-column: 3;
+      grid-row: 5 / span 3;
+    }
+
+    .maintain h1 {
+        line-height: 1.05;
+    }
+
+    .maintain img {
+      max-width: auto;
+      width: 100%;
+    }
+
+    .grow-followers {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      grid-column: 3 / span 2;
+      grid-row: 8 / span 3;
+      padding: 1rem;
+    }
+
+    .grow-followers img {
+      width: 10rem;
+      margin-bottom: 0;
+    }
+
+    .grow-followers h1 {
+      margin-left: 1rem;
+      text-align: start;
+    }
+
+    .audience-growth {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      grid-column: 2;
+      grid-row: 8 / span 3;
+    }
+    .audience-growth h1 {
+        font-size: 3rem;
+    }
+    .schedule-media {
+      grid-column: 4 / span 1;
+      grid-row: 1 / span 7;
+      overflow: hidden;
+    }
+
+    .schedule-media h1 {
+      text-align: start;
+      font-weight: 500;
+    }
+    .schedule-media img {
+      height: 16rem;
+      width: 20rem;
+
+    }
+    .schedule-media p {
+      text-align: start;
+      font-size: .9rem;
+    }
+    .ai-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      grid-column: 1;
+      grid-row: 6 / span 5;
+    }
+
+    .ai-content h1 {
+      font-size: 2.1rem;
+      margin-bottom: 3rem;
+      line-height: .9;
+    }
+    .ai-content img {
+      width: 100%;
+      max-height: 12rem;
+    }
+
+    .create-post {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      grid-column: 1;
+      grid-row: 1 / span 5;
+    }
+
+    .create-post img {
+      width: 9.5rem
+    }
+  }

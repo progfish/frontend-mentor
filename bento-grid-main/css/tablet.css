@@ -1,0 +1,64 @@
+@media (min-width: 768px) {
+    .flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    main {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 40rem;
+    }
+
+    .social-media {
+      grid-column: span 2;
+      padding: 3rem;
+    }
+    .manage {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      grid-row: 2 / span 1;
+    }
+    .maintain {
+      grid-row: 3 / span 1;
+    }
+    .grow-followers {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      grid-column: 2;
+      grid-row: 4 / span 2;
+
+    }
+
+    .audience-growth {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      grid-row: 4 / span 1;
+    }
+    .schedule-media {
+      grid-column: 2;
+      grid-row: 2 / span 2;
+    }
+
+    .schedule-media img {
+      height: 11.5rem;
+    }
+
+    .ai-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      grid-row: 5 / span 2;
+    }
+
+    .create-post {
+      grid-column: 2;
+      grid-row: 6 / span 1;
+    }
+  }
