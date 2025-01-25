@@ -1,0 +1,183 @@
+body {
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 18px;
+    background-color: hsl(0, 0%, 95%);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+  }
+
+  main {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 343px;
+  }
+
+  .social-media {
+    padding: 2rem;
+    background-color: hsl(256, 67%, 59%);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-media h1 {
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 2.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .social-media span {
+    color: hsl(39, 100%, 71%);
+  }
+  em {
+    color: hsl(0, 0%, 100%);
+  }
+
+  .social-media img {
+    max-width: 12rem;
+    margin-bottom: .5rem;
+  }
+
+  .social-media p {
+    color: hsl(0, 0%, 100%);
+  }
+
+  .manage {
+    border-radius: .5rem;
+    background-color: hsl(0, 0%, 100%);
+    padding: 1rem;
+  }
+
+  .manage img {
+    height: auto;
+    width: 100%;
+    margin-bottom: .75rem;
+  }
+
+  .manage h1 {
+    font-size: 1.35rem;
+    line-height: 1.25rem;
+  }
+
+  .maintain {
+    border-radius: .5rem;
+    background-color: hsl(39, 100%, 71%);
+    padding: 1rem 1rem 0;
+    max-height: 12.8rem;
+    overflow: hidden;
+  }
+
+  .maintain h1 {
+    font-size: 1.35rem;
+    line-height: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .maintain img {
+    max-width: 12.5rem;
+  }
+
+  .schedule-media {
+    border-radius: .5rem;
+    padding: 2rem 1rem;
+    background-color: hsl(254, 88%, 90%);
+  }
+  .schedule-media h1 {
+    font-size: 1.35rem;
+    line-height: 1.25rem;
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+  .schedule-media img {
+    width: 100%;
+    margin-bottom: 1.25rem;
+  }
+
+  .schedule-media p {
+    padding: 0 .5rem;
+    text-align: center;
+    line-height: 1.2rem;
+  }
+
+  .grow-followers {
+    padding: 1.25rem 3rem;
+    border-radius: .5rem;
+    background-color: hsl(256, 67%, 59%);
+  }
+
+  .grow-followers img {
+    width: 100%;
+    margin-bottom: 1.75rem;
+  }
+
+  .grow-followers h1 {
+    color: hsl(0, 0%, 100%);
+    line-height: 1.6rem;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .audience-growth {
+    border-radius: .5rem;
+    padding: 1rem;
+    background-color: hsl(0, 0%, 100%);
+  }
+
+  .audience-growth h1 {
+    font-weight: 500;
+    color: hsl(0, 0%, 7%);
+  }
+
+  .audience-growth p {
+    font-size: .9rem;
+    margin-bottom: 1rem;
+  }
+
+  .audience-growth img {
+    max-width: 9rem;
+  }
+
+  .create-post {
+    padding: 1.5rem;
+    background-color: hsl(31, 66%, 93%);
+  }
+
+  .create-post h1 {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .create-post em {
+    color: hsl(256, 67%, 59%);
+  }
+
+  .create-post img {
+    width: 12rem;
+  }
+
+  .ai-content {
+    padding: 1rem;
+    background-color: hsl(39, 100%, 71%);
+    border-radius: .5rem;
+  }
+
+  .ai-content h1 {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .ai-content img {
+    width: 13.7rem;
+  }
