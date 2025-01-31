@@ -315,28 +315,41 @@
         main {
           max-width: 100%;
           margin: 5rem;
-
-
         }
 
         .desserts {
           flex-direction: row;
           flex-wrap: wrap;
           gap: 1rem;
+
         }
 
         .desserts > h1 {
           flex: 1 100%;
         }
         .dessert {
-          /* src:  */
-          /* height: 15rem; */
           flex: 1 30%;
         }
-      }
-    </style>
 
-    <!-- <script type="module" src="./index.js" defer></script> -->
+
+      }
+
+      @media (min-width: 968px) {
+        main {
+          display: flex;
+          gap: 1rem;
+        }
+
+        .desserts {
+          flex: 1 70%;
+        }
+
+        .cart {
+          max-height: fit-content;
+        }
+      }
+
+    </style>
 
   </head>
 
@@ -346,7 +359,6 @@
 
       <section class="desserts">
         <h1>Desserts</h1>
-        <!-- Dynamically import desserts -->
         <div class="dessert">
           <div class="dessert-img">
             <img src="./assets/images/image-waffle-mobile.jpg" alt="Waffle with Berries">
@@ -482,10 +494,7 @@
             ...dessert
           }))
         }).finally(() => {
-          console.log(desserts)
-          // window.addEventListener('resize', (event) => {
-          //   console.log('resize')
-          // })
+
           // add dessert to cart
           document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', (event) => {
