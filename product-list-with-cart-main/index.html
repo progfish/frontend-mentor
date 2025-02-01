@@ -11,19 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
       rel="stylesheet">
+    <link rel="stylesheet" href="./css/desserts.css">
+    <link rel="stylesheet" href="./css/cart.css">
 
     <title>Frontend Mentor | Product list with cart</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
 
       * {
         box-sizing: border-box;
@@ -52,261 +46,6 @@
         margin: 2rem 1rem;
       }
 
-      .desserts {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .dessert {
-        margin-bottom: 1.5rem;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-        color: hsl(14, 65%, 9%);
-        margin-bottom: 2rem;
-      }
-
-      .dessert-img {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .dessert-img>img {
-        max-width: 100%;
-        border-radius: .5rem;
-        margin-bottom: 2rem;
-      }
-
-      .category {
-        font-weight: 500;
-        font-size: .9rem;
-        color: hsl(14, 25%, 72%);
-        margin-bottom: .25rem;
-      }
-
-      .name {
-        color: hsl(14, 65%, 9%);
-        margin-bottom: .25rem;
-      }
-
-      .price {
-        color: hsl(14, 86%, 42%);
-      }
-
-      .add-to-cart-button {
-        outline: none;
-        border: .5px solid hsl(14, 65%, 9%);
-        width: 10rem;
-        display: flex;
-        align-items: center;
-        font-weight: 700;
-        height: 2.7rem;
-        border-radius: 3rem;
-        cursor: pointer;
-
-        position: absolute;
-        bottom: 1rem;
-      }
-
-      .add-to-cart {
-        background-color: hsl(0, 0%, 100%);
-        justify-content: center;
-        color: hsl(14, 65%, 9%);
-      }
-
-      .add-to-cart>img {
-        width: 1.5rem;
-        margin-right: .5rem;
-      }
-
-      .add-to-cart:hover {
-        border-color: hsl(14, 86%, 42%);
-        color: hsl(14, 86%, 42%);
-      }
-
-      .cart {
-        border-radius: .5rem;
-        display: flex;
-        flex-direction: column;
-        padding: 1.5rem;
-        background-color: hsl(0, 0%, 100%);
-      }
-
-      .cart h1 {
-        align-self: flex-start;
-        color: hsl(14, 86%, 42%);
-        font-size: 1.5rem;
-      }
-
-      .empty-cart {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .empty-cart img {
-        width: 8rem;
-      }
-
-      .empty-cart p {
-        font-size: .85rem;
-        color: hsl(7, 20%, 60%);
-      }
-
-      .qty-container {
-        height: 1rem;
-        width: 1rem;
-        border: 1px solid hsl(0, 0%, 100%);
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .select-quantity {
-        background-color: hsl(14, 86%, 42%);
-        color: hsl(0, 0%, 100%);
-        justify-content: space-around !important;
-      }
-
-      .cart-order {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .cart-order h1 {
-        align-self: flex-start;
-        color: hsl(14, 86%, 42%);
-        font-size: 1.5rem;
-      }
-
-      ul {
-        list-style-type: none;
-        align-self: flex-start;
-        width: 100%;
-      }
-
-      .item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid hsl(20, 50%, 98%);
-        padding: 1rem 0;
-      }
-
-      .item-name {
-        font-size: .85rem;
-        color: hsl(14, 65%, 9%);
-        margin-bottom: .5rem;
-      }
-
-      .item-qty {
-        color: hsl(14, 86%, 42%);
-        font-size: .8rem;
-        margin-right: .8rem;
-      }
-
-      .item-price {
-        color: hsl(7, 20%, 60%);
-        font-weight: 400;
-        font-size: .9rem;
-        margin-right: .5rem;
-      }
-
-      .item-total {
-        color: hsl(12, 20%, 44%);
-        font-weight: 600;
-        font-size: .9rem;
-      }
-
-      .remove-button {
-        height: 1.2rem;
-        width: 1.2rem;
-        border-radius: 50%;
-        border: 1px solid hsl(14, 25%, 72%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-
-      .remove {
-        mask-image: url('./assets/images/icon-remove-item.svg');
-        mask-size: 100%;
-        background-color: hsl(14, 25%, 72%);
-        mask-repeat: no-repeat;
-        width: .6rem;
-        height: .6rem;
-      }
-
-      .remove-button:hover {
-        border-color: hsl(14, 65%, 9%);
-      }
-
-      .remove-button:hover .remove {
-        background-color: hsl(14, 65%, 9%);
-      }
-
-      .order-total-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1.5rem 0;
-      }
-
-      .order-total-text {
-        font-size: .8rem;
-        font-weight: 500;
-        color: hsl(14, 65%, 9%);
-      }
-
-      .order-total {
-        color: hsl(14, 65%, 9%);
-        font-size: 1.5rem;
-        font-weight: 700;
-      }
-
-      .delivery-container {
-        height: 3rem;
-        background-color: hsl(20, 50%, 98%);
-        color: hsl(14, 65%, 9%);
-        border-radius: .5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: .9rem;
-        font-weight: 400;
-        margin-bottom: 1.5rem;
-      }
-
-      .delivery-container img {
-        margin-right: .5rem;
-      }
-
-      .delivery-container span {
-        font-weight: 600;
-      }
-
-      .confirm-order-button {
-        background-color: hsl(14, 86%, 42%);
-        color: hsl(20, 50%, 98%);
-        outline: none;
-        border: none;
-        border-radius: 3rem;
-        height: 3rem;
-        font-weight: 500;
-        font-size: .95rem;
-        letter-spacing: .05rem;
-        cursor: pointer;
-      }
-
-      .confirm-order-button:hover {
-        background-color: hsl(14, 86%, 32%);
-      }
-
       .hide {
         display: none;
       }
@@ -321,7 +60,6 @@
           flex-direction: row;
           flex-wrap: wrap;
           gap: 1rem;
-
         }
 
         .desserts > h1 {
@@ -330,7 +68,6 @@
         .dessert {
           flex: 1 30%;
         }
-
 
       }
 
@@ -355,120 +92,28 @@
 
   <body>
     <main>
-
-
-      <section class="desserts">
+      <!-- desserts -->
+      <section id="desserts-container" class="desserts">
         <h1>Desserts</h1>
-        <div class="dessert">
-          <div class="dessert-img">
-            <img src="./assets/images/image-waffle-mobile.jpg" alt="Waffle with Berries">
-            <button data-id="0"
-              class="add-to-cart-button add-to-cart"><img src="../assets/images/icon-add-to-cart.svg"
-                alt="Add to Cart">Add to Cart</button>
-                <button data-id="0" class="add-to-cart-button hide select-quantity"><div data-type="DECREMENT" class="qty-container"><img src="./assets/images/icon-decrement-quantity.svg" alt="Decrement quantity"></div><div id="item-qty">1</div><div class="qty-container" data-type="INCREMENT" ><img src="./assets/images/icon-increment-quantity.svg" alt="Increment quantity"></div></button>
-              </div>
-          <div class="category">Waffle</div>
-          <div class="name">Waffle with Berries</div>
-          <div class="price">$6.50</div>
-        </div>
-        <div class="dessert">
-          <div class="dessert-img"><img src="./assets/images/image-creme-brulee-mobile.jpg"
-              alt="Vanilla Bean Crème Brûlée"><button class=" add-to-cart-button add-to-cart" data-id="1"><img
-                src="../assets/images/icon-add-to-cart.svg" alt="Add to Cart">Add to Cart</button>
-                <button data-id="1" class="add-to-cart-button hide select-quantity"><div class="qty-container" data-type="DECREMENT" ><img src="./assets/images/icon-decrement-quantity.svg" alt="Decrement quantity"></div><div id="item-qty">1</div><div class="qty-container" data-type="INCREMENT"><img src="./assets/images/icon-increment-quantity.svg" alt="Increment quantity"></div></button>
-              </div>
-          <div class="category">Crème Brûlée</div>
-          <div class="name">Vanilla Bean Crème Brûlée</div>
-          <div class="price">$7.00</div>
-        </div>
-        <div class="dessert">
-          <div class="dessert-img"><img src="./assets/images/image-macaron-mobile.jpg" alt="Macaron Mix of Five"><button
-              class="add-to-cart-button add-to-cart" data-id="2"><img src="../assets/images/icon-add-to-cart.svg"
-                alt="Add to Cart">Add to Cart</button>
-                <button data-id="2" class="add-to-cart-button hide select-quantity"><div class="qty-container" data-type="DECREMENT" ><img src="./assets/images/icon-decrement-quantity.svg" alt="Decrement quantity"></div><div id="item-qty">1</div><div class="qty-container" data-type="INCREMENT"><img src="./assets/images/icon-increment-quantity.svg" alt="Increment quantity"></div></button>
-              </div>
-          <div class="category">Macaron</div>
-          <div class="name">Macaron Mix of Five</div>
-          <div class="price">$8.00</div>
-        </div>
-        <div class="dessert">
-          <div class="dessert-img"><img src="./assets/images/image-tiramisu-mobile.jpg" alt="Classic Tiramisu"><button
-              class="add-to-cart-button add-to-cart" data-id="3"><img src="../assets/images/icon-add-to-cart.svg"
-                alt="Add to Cart">Add to Cart</button>
-                <button data-id="3" class="add-to-cart-button hide select-quantity"><div class="qty-container" data-type="DECREMENT" ><img src="./assets/images/icon-decrement-quantity.svg" alt="Decrement quantity"></div><div id="item-qty">1</div><div class="qty-container" data-type="INCREMENT"><img src="./assets/images/icon-increment-quantity.svg" alt="Increment quantity"></div></button>
-              </div>
-          <div class="category">Tiramisu</div>
-          <div class="name">Classic Tiramisu</div>
-          <div class="price">$5.50</div>
-        </div>
-        <div class="dessert">
-          <div class="dessert-img"><img src="./assets/images/image-baklava-mobile.jpg" alt="Pistachio Baklava"><button
-              class="add-to-cart-button add-to-cart" data-id="4"><img src="../assets/images/icon-add-to-cart.svg"
-                alt="Add to Cart">Add to Cart</button>
-                <button data-id="4" class="add-to-cart-button hide select-quantity"><div class="qty-container" data-type="DECREMENT" ><img src="./assets/images/icon-decrement-quantity.svg" alt="Decrement quantity"></div><div id="item-qty">1</div><div class="qty-container" data-type="INCREMENT"><img src="./assets/images/icon-increment-quantity.svg" alt="Increment quantity"></div></button>
-              </div>
-          <div class="category">Baklava</div>
-          <div class="name">Pistachio Baklava</div>
-          <div class="price">$4.00</div>
-        </div>
-        <div class="dessert">
-          <div class="dessert-img"><img src="./assets/images/image-meringue-mobile.jpg" alt="Lemon Meringue Pie"><button
-              class="add-to-cart-button add-to-cart" data-id="5"><img src="../assets/images/icon-add-to-cart.svg"
-                alt="Add to Cart">Add to Cart</button>
-                <button data-id="5" class="add-to-cart-button hide select-quantity"><div class="qty-container" data-type="DECREMENT" ><img src="./assets/images/icon-decrement-quantity.svg" alt="Decrement quantity"></div><div id="item-qty">1</div><div class="qty-container" data-type="INCREMENT"><img src="./assets/images/icon-increment-quantity.svg" alt="Increment quantity"></div></button>
-              </div>
-          <div class="category">Pie</div>
-          <div class="name">Lemon Meringue Pie</div>
-          <div class="price">$5.00</div>
-        </div>
-        <div class="dessert">
-          <div class="dessert-img"><img src="./assets/images/image-cake-mobile.jpg" alt="Red Velvet Cake"><button
-              class="add-to-cart-button add-to-cart" data-id="6"><img src="../assets/images/icon-add-to-cart.svg"
-                alt="Add to Cart">Add to Cart</button>
-                <button data-id="6" class="add-to-cart-button hide select-quantity"><div class="qty-container" data-type="DECREMENT" ><img src="./assets/images/icon-decrement-quantity.svg" alt="Decrement quantity"></div><div id="item-qty">1</div><div class="qty-container" data-type="INCREMENT"><img src="./assets/images/icon-increment-quantity.svg" alt="Increment quantity"></div></button>
-              </div>
-          <div class="category">Cake</div>
-          <div class="name">Red Velvet Cake</div>
-          <div class="price">$4.50</div>
-        </div>
-        <div class="dessert">
-          <div class="dessert-img"><img src="./assets/images/image-brownie-mobile.jpg"
-              alt="Salted Caramel Brownie"><button class="add-to-cart-button add-to-cart" data-id="7"><img
-                src="../assets/images/icon-add-to-cart.svg" alt="Add to Cart">Add to Cart</button>
-                <button data-id="7" class="add-to-cart-button hide select-quantity"><div class="qty-container" data-type="DECREMENT" ><img src="./assets/images/icon-decrement-quantity.svg" alt="Decrement quantity"></div><div id="item-qty">1</div><div class="qty-container" data-type="INCREMENT"><img src="./assets/images/icon-increment-quantity.svg" alt="Increment quantity"></div></button>
-              </div>
-          <div class="category">Brownie</div>
-          <div class="name">Salted Caramel Brownie</div>
-          <div class="price">$4.50</div>
-        </div>
-        <div class="dessert">
-          <div class="dessert-img"><img src="./assets/images/image-panna-cotta-mobile.jpg"
-              alt="Vanilla Panna Cotta"><button class="add-to-cart-button add-to-cart" data-id="8"><img
-                src="../assets/images/icon-add-to-cart.svg" alt="Add to Cart">Add to Cart</button>
-                <button data-id="8" class="add-to-cart-button hide select-quantity"><div class="qty-container" data-type="DECREMENT" ><img src="./assets/images/icon-decrement-quantity.svg" alt="Decrement quantity"></div><div id="item-qty">1</div><div class="qty-container" data-type="INCREMENT"><img src="./assets/images/icon-increment-quantity.svg" alt="Increment quantity"></div></button>
-              </div>
-          <div class="category">Panna Cotta</div>
-          <div class="name">Vanilla Panna Cotta</div>
-          <div class="price">$6.50</div>
-        </div>
+        <!-- Dynamically add desserts -->
       </section>
 
       <!-- cart -->
       <section class="cart">
         <h1>Your Cart (<span id="cart-qty">0</span>)</h1>
 
-        <div class="empty-cart">
+        <div id="empty-cart-container" class="empty-cart">
           <img src="./assets/images/illustration-empty-cart.svg" alt="Empty Cart">
           <p>Your added items will appear here</p>
         </div>
 
-        <div class="cart-order hide">
+        <div id="cart-order-container" class="cart-order hide">
           <ul id="cart-list">
-
+            <!-- Dynamically add desserts -->
           </ul>
           <div class="order-total-container">
             <div class="order-total-text">Order Total</div>
-            <div class="order-total"></div>
+            <div id="order-total" class="order-total"></div>
           </div>
           <div class="delivery-container">
             <img src="./assets/images/icon-carbon-neutral.svg" alt="Carbon neutral">
@@ -479,185 +124,19 @@
           </button>
         </div>
       </section>
+
+      <div class="order-confirmed">
+
+      </div>
     </main>
 
     <script>
       /** GLOBAL **/
       const CART = []
       let desserts = undefined
-
-      fetch('./data.json').then(resp => {
-        resp.json().then(json => {
-          desserts = json.map((dessert, index) => ({
-            id: index,
-            qty: 0,
-            ...dessert
-          }))
-        }).finally(() => {
-
-          // add dessert to cart
-          document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', (event) => {
-              const target = event.target
-
-              // toggle button
-              target.classList.toggle('hide')
-              target.nextElementSibling?.classList.toggle('hide')
-
-              // update cart
-              const id = target.getAttribute('data-id')
-              const dessert = {...desserts.find(d => d.id == id)}
-              dessert.qty += 1
-              CART.push(dessert)
-
-              const cartOrderSection = document.querySelector('.cart-order')
-              if (cartOrderSection.classList.contains('hide')) {
-                cartOrderSection.classList.toggle('hide')
-                document.querySelector('.empty-cart').classList.toggle('hide')
-              }
-              console.log(CART)
-              addToCartListUI(dessert)
-            })
-          })
-
-          // update quantity
-          document.querySelectorAll('.qty-container').forEach(button => {
-            const type = button.getAttribute('data-type')
-            const id = button.parentElement.getAttribute('data-id')
-
-            if (type === 'DECREMENT') {
-              button.addEventListener('click', (event) => {
-                const dessert = CART.find(c => c.id == id)
-
-                if (dessert.qty !== 1) {
-                  // update cart
-                  dessert.qty -=1
-                  // update UI
-                  button.nextElementSibling.textContent = dessert.qty
-                  updateCartUI(dessert)
-                }
-              })
-            } else if (type === 'INCREMENT') {
-              button.addEventListener('click', (event) => {
-                const dessert = CART.find(c => c.id == id)
-                // update cart
-                dessert.qty +=1
-                // update UI
-                button.previousElementSibling.textContent = dessert.qty
-                updateCartUI(dessert)
-              })
-            }
-          })
-
-        })
-      })
-
-      function addToCartListUI(dessert) {
-        // create li node
-        const li = document.createElement('li')
-        li.classList.add('item')
-        li.setAttribute('data-list-id', dessert.id)
-
-        const div = document.createElement('div')
-        const divName = document.createElement('div')
-        divName.classList.add('item-name')
-        divName.textContent = dessert.name
-
-        const spanQty = document.createElement('span')
-        spanQty.classList.add('item-qty')
-        spanQty.textContent = dessert.qty.toString() + 'x'
-
-        const spanPrice = document.createElement('span')
-        spanPrice.classList.add('item-price')
-
-        const price = dessert.price
-        const formattedPrice = formatPrice(price)
-
-        spanPrice.textContent = '@ ' + formattedPrice
-
-        const spanTotal = document.createElement('span')
-        spanTotal.classList.add('item-total')
-        spanTotal.textContent = sumDessertPrice(dessert)
-
-        div.appendChild(divName)
-        div.appendChild(spanQty)
-        div.appendChild(spanPrice)
-        div.appendChild(spanTotal)
-
-        const buttonRemove = document.createElement('div')
-        buttonRemove.classList.add('remove-button')
-        buttonRemove.setAttribute('data-remove-id', dessert.id)
-
-        const iconRemove = document.createElement('div')
-        iconRemove.classList.add('remove')
-
-        buttonRemove.appendChild(iconRemove)
-        buttonRemove.addEventListener('click', (event) => {
-          const index = CART.find(c => c.id == dessert.id)
-          CART.splice(index, 1)
-          document.querySelector(`button[data-id="${dessert.id}"] #item-qty`).textContent = 1
-          document.querySelector(`li[data-list-id="${dessert.id}"]`).remove()
-          document.getElementById('cart-qty').textContent = CART.reduce((total, item) => total + item.qty, 0);
-          document.querySelector('.order-total').textContent = sumCartTotal()
-
-          document.querySelectorAll(`button[data-id="${dessert.id}"]`).forEach(
-            button => button.classList.toggle('hide')
-          )
-
-          if (CART.length === 0) {
-            document.querySelector('.cart-order').classList.toggle('hide')
-            document.querySelector('.empty-cart').classList.toggle('hide')
-
-            document.querySelectorAll('.add-to-cart.hide').forEach(button => {
-              button.classList.toggle('hide')
-            })
-
-            document.querySelectorAll('.select-quantity:not(.hide)').forEach(button => {
-              button.classList.toggle('hide')
-            })
-          }
-        })
-
-        li.appendChild(div)
-        li.appendChild(buttonRemove)
-
-        // update UI
-        document.getElementById('cart-list').appendChild(li)
-        document.getElementById('cart-qty').textContent = CART.reduce((total, item) => total + item.qty, 0);
-        document.querySelector('.order-total').textContent = sumCartTotal()
-      }
-
-      function sumCartTotal() {
-        const total = CART.reduce((total, item) => total + (item.price * item.qty), 0);
-        return formatPrice(total)
-      }
-
-      function sumDessertPrice(dessert) {
-        return formatPrice(dessert.qty * dessert.price)
-      }
-
-      function formatPrice(price) {
-        const priceStr = price.toString()
-        let [dollar, cents] = priceStr.split('.')
-
-        if (cents === undefined) {
-            cents = '00'
-        } else if (cents.length === 1) {
-            cents = cents + '0'
-        }
-
-        return `$${dollar}.${cents}`
-      }
-
-      function updateCartUI(dessert) {
-        document.getElementById('cart-qty').textContent = CART.reduce((total, item) => total + item.qty, 0);
-        document.querySelector('.order-total').textContent = sumCartTotal()
-
-        const list = document.querySelector(`li[data-list-id="${dessert.id}"]`)
-        list.querySelector('.item-total').textContent = sumDessertPrice(dessert)
-        list.querySelector('.item-qty').textContent = dessert.qty + 'x'
-      }
     </script>
+
+    <script type="module" src="index.js"></script>
   </body>
 
   </html>
