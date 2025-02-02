@@ -1,0 +1,72 @@
+.order-confirmed {
+    background-color: hsl(0, 0%, 100%);
+    /* width: 100vw; */
+    /* flex: 1 20rem; */
+    max-width: 25rem;
+    min-height: 100vh;
+    position: absolute;
+    top: 7rem;
+    /* left: 0; */
+    border-radius: 1rem 1rem 0 0;
+    padding: 2rem;
+    z-index: 100;
+    overflow-y: scroll;
+}
+
+.order-confirmed h1 {
+    color: hsl(14, 65%, 9%);
+    margin-bottom: .5rem;
+    line-height: 1.2;
+}
+
+.order-confirmed p {
+    color: hsl(14, 25%, 72%);
+    font-size: .95rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.confirmed-cart ul {
+    max-height: 16.3rem;
+    overflow-y: scroll;
+}
+.confirmed-cart .item {
+    justify-content: start;
+}
+
+.confirmed-cart .item-total {
+    color:hsl(14, 65%, 9%);
+}
+
+.item img {
+    width: 3rem;
+    margin-right: 1rem;
+}
+
+.item img + div {
+    flex: 2;
+}
+
+.confirmed-cart {
+    background-color: hsl(20, 50%, 98%);
+    padding: .5rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.order-confirmed button {
+    width: 100%;
+}
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    z-index: 50;
+    background-color: hsl(0, 0%, 0%);
+    opacity: .4;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.no-scroll {
+    overflow: hidden;
+}

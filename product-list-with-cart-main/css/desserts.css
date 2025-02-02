@@ -1,0 +1,90 @@
+.desserts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dessert {
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: hsl(14, 65%, 9%);
+    margin-bottom: 2rem;
+  }
+
+  .dessert-img {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dessert-img>img {
+    max-width: 100%;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+  }
+
+  .category {
+    font-weight: 500;
+    font-size: .9rem;
+    color: hsl(14, 25%, 72%);
+    margin-bottom: .25rem;
+  }
+
+  .name {
+    color: hsl(14, 65%, 9%);
+    margin-bottom: .25rem;
+  }
+
+  .price {
+    color: hsl(14, 86%, 42%);
+  }
+
+  .add-to-cart-button {
+    outline: none;
+    border: .5px solid hsl(14, 65%, 9%);
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    height: 2.7rem;
+    border-radius: 3rem;
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 1rem;
+  }
+
+  .add-to-cart {
+    background-color: hsl(0, 0%, 100%);
+    justify-content: center;
+    color: hsl(14, 65%, 9%);
+  }
+
+  .add-to-cart>img {
+    width: 1.5rem;
+    margin-right: .5rem;
+  }
+
+  .add-to-cart:hover {
+    border-color: hsl(14, 86%, 42%);
+    color: hsl(14, 86%, 42%);
+  }
+
+  .qty-container {
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .select-quantity {
+    background-color: hsl(14, 86%, 42%);
+    color: hsl(0, 0%, 100%);
+    justify-content: space-around !important;
+  }

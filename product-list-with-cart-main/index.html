@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" category="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="./css/desserts.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/order-confirmed.css">
+
+    <title>Frontend Mentor | Product list with cart</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: 'Red Hat Text';
+        font-size: 1rem;
+        font-weight: 600;
+
+        background-color: hsl(20, 50%, 98%);
+        position: relative;
+      }
+
+      main {
+        flex: 1;
+        max-width: 20rem;
+
+        margin: 2rem 1rem;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        main {
+          max-width: 100%;
+          margin: 5rem;
+        }
+
+        .desserts {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+
+        .desserts > h1 {
+          flex: 1 100%;
+        }
+        .dessert {
+          flex: 1 30%;
+        }
+
+        .order-confirmed {
+          margin: auto;
+          min-height: 0;
+          max-height: fit-content;
+          min-width: 30rem;
+          border-radius: 1rem;
+          overflow-y: auto;
+        }
+      }
+
+      @media (min-width: 968px) {
+        main {
+          display: flex;
+          gap: 1rem;
+        }
+
+        .desserts {
+          flex: 1 70%;
+        }
+
+        .cart {
+          flex: 1 0 30%;
+          max-height: fit-content;
+        }
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+    <main>
+      <!-- desserts -->
+      <section id="desserts-container" class="desserts">
+        <h1>Desserts</h1>
+        <!-- Dynamically add desserts -->
+      </section>
+
+      <!-- cart -->
+      <section class="cart">
+        <h1>Your Cart (<span id="cart-qty">0</span>)</h1>
+
+        <div id="empty-cart-container" class="empty-cart">
+          <img src="./assets/images/illustration-empty-cart.svg" alt="Empty Cart">
+          <p>Your added items will appear here</p>
+        </div>
+
+        <div id="cart-order-container" class="cart-order hide">
+          <ul id="cart-list">
+            <!-- Dynamically add desserts -->
+          </ul>
+          <div class="order-total-container">
+            <div class="order-total-text">Order Total</div>
+            <div id="order-total" class="order-total"></div>
+          </div>
+          <div class="delivery-container">
+            <img src="./assets/images/icon-carbon-neutral.svg" alt="Carbon neutral">
+            <div>This is a <span>carbon-netural</span> delivery</div>
+          </div>
+          <button id="confirm-order-button" class="confirm-order-button">
+              Confirm Order
+          </button>
+        </div>
+      </section>
+
+
+    </main>
+
+
+    <div class="overlay hide"></div>
+    <div id="order-confirmed" class="order-confirmed hide">
+      <img src="./assets/images/icon-order-confirmed.svg" alt="Order confirmed">
+      <h1>Order Confirmed</h1>
+      <p>We hope you enjoy your food!</p>
+
+      <div id="confirmed-container" class="confirmed-cart">
+        <ul id="confirmed-cart-list">
+          <!-- Dynamically add desserts -->
+        </ul>
+
+        <div class="order-total-container">
+          <div class="order-total-text">Order Total</div>
+          <div id="confirmed-order-total" class="order-total"></div>
+        </div>
+
+      </div>
+
+
+      <button id="start-new-order-btn" class="confirm-order-button">
+        Start New Order
+      </button>
+    </div>
+
+    <script>
+      /** GLOBAL **/
+      const CART = []
+      let desserts = undefined
+    </script>
+
+    <script type="module" src="index.js"></script>
+  </body>
+
+  </html>
