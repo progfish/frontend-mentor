@@ -14,7 +14,7 @@ export default function drawDesserts(desserts) {
           <img data-img-dessert-id=${dessert.id} src="${dessert.image[getImageProp()]}"
             alt="${dessert.name}">
           <button class="add-to-cart-button add-to-cart" data-add-dessert-id="${dessert.id}">
-            <img src="../assets/images/icon-add-to-cart.svg" alt="Add to Cart">Add to Cart
+            <img src="./assets/images/icon-add-to-cart.svg" alt="Add to Cart">Add to Cart
           </button>
           <button data-update-dessert-id="${dessert.id}" class="add-to-cart-button hide select-quantity">
             <div class="qty-container" data-update-type="DECREMENT" >
