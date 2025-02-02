@@ -14,5 +14,9 @@ selectors.orderTotal = () => document.querySelector('#order-total')
 selectors.orderTotal = () => document.querySelector('#order-total')
 selectors.cartOrderContainer = () => document.querySelector('#cart-order-container')
 selectors.emptyCartContainer = () => document.querySelector('#empty-cart-container')
-
+selectors.confirmedContainer = () => document.querySelector('#order-confirmed')
+selectors.confirmedCartList = () => document.querySelector('#confirmed-cart-list')
+selectors.confirmedOrderTotal = () => document.querySelector('#confirmed-order-total')
+selectors.startNewOrderBtn = () => document.querySelector('#start-new-order-btn')
+selectors.overlay = () => document.querySelector('.overlay')
 export default selectors

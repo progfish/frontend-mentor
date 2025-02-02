@@ -13,6 +13,7 @@
       rel="stylesheet">
     <link rel="stylesheet" href="./css/desserts.css">
     <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/order-confirmed.css">
 
     <title>Frontend Mentor | Product list with cart</title>
 
@@ -37,6 +38,7 @@
         font-weight: 600;
 
         background-color: hsl(20, 50%, 98%);
+        position: relative;
       }
 
       main {
@@ -69,6 +71,14 @@
           flex: 1 30%;
         }
 
+        .order-confirmed {
+          margin: auto;
+          min-height: 0;
+          max-height: fit-content;
+          min-width: 30rem;
+          border-radius: 1rem;
+          overflow-y: auto;
+        }
       }
 
       @media (min-width: 968px) {
@@ -82,6 +92,7 @@
         }
 
         .cart {
+          flex: 1 0 30%;
           max-height: fit-content;
         }
       }
@@ -119,16 +130,39 @@
             <img src="./assets/images/icon-carbon-neutral.svg" alt="Carbon neutral">
             <div>This is a <span>carbon-netural</span> delivery</div>
           </div>
-          <button class="confirm-order-button">
+          <button id="confirm-order-button" class="confirm-order-button">
               Confirm Order
           </button>
         </div>
       </section>
 
-      <div class="order-confirmed">
+
+    </main>
+
+
+    <div class="overlay hide"></div>
+    <div id="order-confirmed" class="order-confirmed hide">
+      <img src="./assets/images/icon-order-confirmed.svg" alt="Order confirmed">
+      <h1>Order Confirmed</h1>
+      <p>We hope you enjoy your food!</p>
+
+      <div id="confirmed-container" class="confirmed-cart">
+        <ul id="confirmed-cart-list">
+          <!-- Dynamically add desserts -->
+        </ul>
+
+        <div class="order-total-container">
+          <div class="order-total-text">Order Total</div>
+          <div id="confirmed-order-total" class="order-total"></div>
+        </div>
 
       </div>
-    </main>
+
+
+      <button id="start-new-order-btn" class="confirm-order-button">
+        Start New Order
+      </button>
+    </div>
 
     <script>
       /** GLOBAL **/

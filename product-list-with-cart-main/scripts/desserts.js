@@ -3,10 +3,9 @@ import {addToCartListUI, updateCartUI} from "./cart.js"
 import { formatPrice, getImageProp } from "./utils.js"
 
 export default function drawDesserts(desserts) {
-    console.log(desserts)
     const dessertsSelector = selectors.dessertsContainer()
 
-    for(const dessert of desserts) {
+    desserts.forEach(dessert => {
       const divDessert = document.createElement('div')
       divDessert.classList.add('dessert')
 
@@ -79,7 +78,26 @@ export default function drawDesserts(desserts) {
         selectors.updateDessertBtnQty(id).textContent = dessert.qty
         updateCartUI(dessert)
       })
+    })
 
+  }
+
+  function addDessertToCart(target, dessert) {
+    // update cart
+    const dessertCopy = {...desserts.find(d => d.id == dessert.id)}
+    ++dessertCopy.qty
+    CART.push(dessertCopy)
+
+    // toggle button
+    target.classList.add('hide')
+    selectors.updateDessertBtn(dessertCopy.id).classList.remove('hide')
+
+    const cartOrderSection = selectors.cartOrderContainer()
+
+    if (cartOrderSection.classList.contains('hide')) {
+      cartOrderSection.classList.remove('hide')
+      selectors.emptyCartContainer().classList.add('hide')
     }
 
+    addToCartListUI(dessertCopy)
   }

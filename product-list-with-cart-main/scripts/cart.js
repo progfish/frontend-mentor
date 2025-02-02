@@ -1,3 +1,4 @@
+import drawOrderConfirmedList from "./order-confirmed.js"
 import selectors from "./selectors.js"
 import {formatPrice, sumCartTotal, sumDessertPrice} from "./utils.js"
 
@@ -53,3 +54,14 @@ export function addToCartListUI(dessert) {
     selectors.cartDessertTotalPrice(dessert.id).textContent = sumDessertPrice(dessert)
     selectors.cartDessertQty(dessert.id).textContent = dessert.qty + 'x'
   }
+
+  document.querySelector('#confirm-order-button').addEventListener('click', () => {
+    window.scrollTo({top: 0})
+    document.body.classList.add('no-scroll')
+    selectors.overlay().classList.remove('hide')
+    selectors.confirmedContainer().classList.remove('hide')
+
+    CART.forEach(dessert => drawOrderConfirmedList(dessert))
+
+    selectors.confirmedOrderTotal().textContent = selectors.orderTotal().textContent
+  })
