@@ -24,22 +24,7 @@ export function addToCartListUI(dessert) {
     selectors.cartList().appendChild(li)
 
     selectors.cartRemoveDessertBtn(dessert.id).addEventListener('click', (event) => {
-      const index = CART.findIndex(c => c.id == dessert.id)
-      CART.splice(index, 1)
-
-      selectors.updateDessertBtnQty(dessert.id).textContent = 1
-
-      selectors.cartDessertItem(dessert.id).remove()
-      selectors.cartQty().textContent = CART.reduce((total, item) => total + item.qty, 0);
-      selectors.orderTotal().textContent = sumCartTotal()
-
-      selectors.addDessertBtn(dessert.id).classList.remove('hide')
-      selectors.updateDessertBtn(dessert.id).classList.add('hide')
-
-      if (CART.length === 0) {
-        selectors.cartOrderContainer().classList.add('hide')
-        selectors.emptyCartContainer().classList.remove('hide')
-      }
+      removeDessertFromCart(dessert.id)
     })
 
     // update UI
@@ -55,7 +40,7 @@ export function addToCartListUI(dessert) {
     selectors.cartDessertQty(dessert.id).textContent = dessert.qty + 'x'
   }
 
-  document.querySelector('#confirm-order-button').addEventListener('click', () => {
+  selectors.confirmOrderBtn().addEventListener('click', () => {
     window.scrollTo({top: 0})
     document.body.classList.add('no-scroll')
     selectors.overlay().classList.remove('hide')
@@ -65,3 +50,22 @@ export function addToCartListUI(dessert) {
 
     selectors.confirmedOrderTotal().textContent = selectors.orderTotal().textContent
   })
+
+  function removeDessertFromCart(id) {
+    const index = CART.findIndex(c => c.id == id)
+      CART.splice(index, 1)
+
+      selectors.updateDessertBtnQty(id).textContent = 1
+
+      selectors.cartDessertItem(id).remove()
+      selectors.cartQty().textContent = CART.reduce((total, item) => total + item.qty, 0);
+      selectors.orderTotal().textContent = sumCartTotal()
+
+      selectors.addDessertBtn(id).classList.remove('hide')
+      selectors.updateDessertBtn(id).classList.add('hide')
+
+      if (CART.length === 0) {
+        selectors.cartOrderContainer().classList.add('hide')
+        selectors.emptyCartContainer().classList.remove('hide')
+      }
+  }

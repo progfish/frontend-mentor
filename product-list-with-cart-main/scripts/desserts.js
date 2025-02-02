@@ -35,25 +35,7 @@ export default function drawDesserts(desserts) {
       dessertsSelector.appendChild(divDessert)
 
       selectors.addDessertBtn(dessert.id).addEventListener('click', (event) => {
-        const target = event.target
-
-        // update cart
-        const dessertCopy = {...desserts.find(d => d.id == dessert.id)}
-        ++dessertCopy.qty
-        CART.push(dessertCopy)
-
-        // toggle button
-        target.classList.add('hide')
-        selectors.updateDessertBtn(dessertCopy.id).classList.remove('hide')
-
-        const cartOrderSection = selectors.cartOrderContainer()
-
-        if (cartOrderSection.classList.contains('hide')) {
-          cartOrderSection.classList.remove('hide')
-          selectors.emptyCartContainer().classList.add('hide')
-        }
-
-        addToCartListUI(dessertCopy)
+        addDessertToCart(event.target, dessert)
       })
 
       const updateButton = selectors.updateDessertBtn(dessert.id)
