@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/mortgage-calculator.css">
+  <link rel="stylesheet" href="./css/results.css">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --white: hsl(0, 0%, 100%);
+      --slate-100: hsl(202, 86%, 94%);
+      --slate-300: hsl(203, 41%, 72%);
+      --slate-500: hsl(200, 26%, 54%);
+      --slate-700: hsl(200, 24%, 40%);
+      --slate-900: hsl(202, 55%, 16%);
+      --lime: hsl(61, 70%, 52%);
+      --red: hsl(4, 69%, 50%);
+      --fw-500: 500;
+      --fw-700: 700;
+    }
+
+    * {
+      box-sizing: border-box;
+      font: inherit;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      background-color: var(--slate-100);
+
+      font-family: 'Plus Jakarta Sans';
+      font-size: 1rem;
+    }
+
+    main {
+      flex: 1;
+      max-width: 25rem;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding: 2rem;
+      }
+      main {
+        flex: 0;
+        max-width: 70rem;
+        display: flex;
+        background-color: var(--white);
+        border-radius: 2rem;
+      }
+
+      .mortgage-calc, .results {
+        flex: 1 50%;
+      }
+      .mortgage-calc {
+        border-radius: inherit;
+      }
+
+      .results {
+        border-radius: inherit;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 5rem;
+        justify-content: center;
+      }
+
+      .results p {
+        font-size: 1.2rem;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .form {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .amount-container, .radio-container {
+        flex: 1 100%;
+      }
+      .term-container, .rate-container {
+        flex: 1 40%;
+      }
+
+      .term-container {
+        margin-right: 1.5rem;
+      }
+      button {
+        width: 75%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+
+    <section class="mortgage-calc">
+      <header>
+        <h1>
+          Mortgage Calculator
+        </h1>
+        <a id="clear" href="#">Clear All</a>
+      </header>
+
+      <form class="form">
+        <div class="amount-container">
+          <label for="amount">Mortgage Amount</label>
+          <div class="mortgage-input">
+            <input type="number" name="amount" id="amount">
+            <div class="left input-symbol">&pound;</div>
+            <p>This field is required</p>
+          </div>
+        </div>
+
+        <div class="term-container">
+          <label for="term">Mortgage Term</label>
+          <div class="mortgage-input">
+            <input type="number" name="term" id="term">
+            <div class="right input-symbol">years</div>
+            <p>This field is required</p>
+          </div>
+        </div>
+
+        <div class="rate-container">
+          <label for="rate">Interest Rate</label>
+          <div class="mortgage-input">
+            <input type="number" name="rate" id="rate">
+            <div class="right input-symbol">&percnt;</div>
+            <p>This field is required</p>
+          </div>
+        </div>
+
+        <div class="radio-container">
+          <label for="rate">Mortgage Type</label>
+          <div class="radio-input">
+            <input type="radio" name="type" id="repayment" value="R">
+            <label for="repayment">Repayment</label>
+          </div>
+          <div class="radio-input">
+            <input type="radio" name="type" id="interest" value="I">
+            <label for="interest">Interest Only</label>
+          </div>
+          <p>This field is required</p>
+        </div>
+
+        <button type="button">
+          <img src="./assets/images/icon-calculator.svg" alt="Calculator">
+          Calculate Repayments
+        </button>
+      </form>
+    </section>
+
+    <section id="results" class="results empty">
+      <img src="./assets/images/illustration-empty.svg" alt="Empty results">
+      <h1>Results shown here</h1>
+      <p>Complete the form and click “calculate repayments” to see what
+        your monthly repayments would be.</p>
+
+    </section>
+  </main>
+  <script>
+    /**
+     * Selectors
+    */
+    const amountInput = document.querySelector('#amount')
+    const termInput = document.querySelector('#term')
+    const rateInput = document.querySelector('#rate')
+    const radioInput = document.querySelector('.radio-input')
+    const radioInputs = document.querySelectorAll('.radio-input')
+  </script>
+  <script type="module" src="./index.js"></script>
+</body>
+</html>
