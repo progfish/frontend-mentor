@@ -3,6 +3,19 @@ import { calculateMonthlyInterest, calculateMonthlyRepayments, handleErrors, for
 /**
  * Listeners
  */
+radioInputs.forEach((input, index, radioInputs) => {
+  input.addEventListener('click', () => {
+    input.querySelector('input').checked = true
+
+    radioInputs.forEach(input => {
+      if (input.querySelector('input').checked) {
+        input.classList.add('active-radio')
+      } else {
+        input.classList.remove('active-radio')
+      }
+    })
+  })
+})
 
 document.querySelector('button').addEventListener('click', () => {
     // Check form for errors
@@ -18,7 +31,7 @@ document.querySelector('button').addEventListener('click', () => {
     //R or I
     const typeInputChecked = document.querySelector('input[type="radio"]:checked')
     const type = typeInputChecked?.value
-    // const radioInput = document.querySelector('.radio-input')
+    const radioInput = document.querySelector('.radio-input')
 
     handleErrors(radioInput, type)
 
