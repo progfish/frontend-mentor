@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --green-200: hsl(148, 38%, 91%);
+    --green-600: hsl(169, 82%, 27%);
+    --red: hsl(0, 66%, 54%);
+    --white: hsl(0, 0%, 100%);
+    --grey-500: hsl(186, 15%, 59%);
+    --grey-900: hsl(187, 24%, 22%);
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('../../assets/fonts/Karla-VariableFont_wght.ttf');
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+
+body {
+    font-family: 'Karla';
+    padding: 1.5rem 1rem;
+    background-color: var(--green-200);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    font-size: 1rem;
+}
