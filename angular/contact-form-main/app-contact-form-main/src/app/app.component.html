@@ -1,0 +1,74 @@
+<main>
+
+
+  <h1>Contact Us</h1>
+
+  <form class="d-flex" [formGroup]="formGroup" (ngSubmit)="handleSubmit()">
+    <div class="field flex-50 mr-1">
+      <label for="firstName">First Name <span>*</span></label>
+
+      <input type="text" name="firstName" id="firstName" formControlName="firstName" [ngClass]="{'error': submitted() && formGroup.get('firstName')?.invalid}">
+      <p [ngClass]="{'error': submitted() && formGroup.get('firstName')?.invalid}">This field is required</p>
+    </div>
+
+    <div class="field  flex-50">
+      <label for="lastName">Last Name <span>*</span></label>
+
+      <input type="text" name="lastName" id="lastName" formControlName="lastName" [ngClass]="{'error': submitted() && formGroup.get('lastName')?.invalid}">
+      <p [ngClass]="{'error': submitted() && formGroup.get('lastName')?.invalid}">This field is required</p>
+    </div>
+
+    <div class="field  flex-100">
+      <label for="email">Email Address <span>*</span></label>
+
+      <input type="text" name="email" id="email" formControlName="email" [ngClass]="{'error': submitted() && formGroup.get('email')?.invalid}">
+      <p [ngClass]="{'error': submitted() && formGroup.get('email')?.invalid}">Please enter a valid email address</p>
+    </div>
+
+    <div class="field d-flex">
+      <label for="query" class="flex-100">Query Type <span>*</span></label>
+
+      <label class="radio flex-50 mr-1">
+        <input type="radio" id="general" name="query" formControlName="query" value="G">
+        General Enquiry
+      </label>
+      <label class="radio flex-50">
+        <input type="radio" id="support" name="query" formControlName="query" value="S">
+        Support Request
+      </label>
+
+      <p [ngClass]="{'error': submitted() && formGroup.get('query')?.invalid}">Please select a query type</p>
+    </div>
+
+    <div class="field flex-100">
+      <label for="message">Message <span>*</span></label>
+
+      <textarea name="message" id="message" wrap="soft" formControlName="message" [ngClass]="{'error': submitted() && formGroup.get('message')?.invalid}"></textarea>
+      <p [ngClass]="{'error': submitted() && formGroup.get('message')?.invalid}">Please enter a valid email address</p>
+    </div>
+
+    <div class="field flex-100">
+      <div class="checkbox">
+        <input type="checkbox" name="consent" id="consent" formControlName="consent">
+        <label for="consent">
+          I consent to being contacted by the team <span>*</span>
+        </label>
+      </div>
+
+      <p [ngClass]="{'error': submitted() && formGroup.get('consent')?.invalid}">To submit this form, please consent to being contacted</p>
+    </div>
+
+    <button class="flex-100">Submit</button>
+  </form>
+</main>
+
+<ng-container [ngTemplateOutlet]="success"></ng-container>
+<ng-template #success>
+  <div class="success" [ngClass]="{'animate': showSuccess()}">
+    <div class="title">
+      <img src="assets/images/icon-success-check.svg" alt="Check icon">
+      <div>Message Sent!</div>
+    </div>
+    <p>Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
+</ng-template>
